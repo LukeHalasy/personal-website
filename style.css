@@ -1,15 +1,18 @@
-:root {
+html, body {
   background: #0C121F;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .dot {
-  position: relative;
+  position: absolute;
   border-radius: 50%;
   height: 60px;
   width: 60px;
+  padding: 0px;
+  margin: 0px;
 }
 
 @-webkit-keyframes circular-animation {
@@ -70,13 +73,13 @@
 }
 .dot.theme-light-purple {
   background: #8191D1;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-light-purple 3s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-light-purple 3s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-light-purple 3.4s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-light-purple 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-light-purple.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-purple 3s alternate ease-in infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-purple 3s alternate ease-in infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-purple 3.4s alternate ease-out infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-purple 3.4s alternate ease-out infinite;
 }
 
 @-webkit-keyframes animation-lightup-dull-red {
@@ -97,13 +100,13 @@
 }
 .dot.theme-dull-red {
   background: #8B3838;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-dull-red 3s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-dull-red 3s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-dull-red 3.4s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-dull-red 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-dull-red.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-dull-red 3s alternate ease-in infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-dull-red 3s alternate ease-in infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-dull-red 3.4s alternate ease-out infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-dull-red 3.4s alternate ease-out infinite;
 }
 
 @-webkit-keyframes animation-lightup-hunter-green {
@@ -124,40 +127,40 @@
 }
 .dot.theme-hunter-green {
   background: #3D8C94;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-hunter-green 3s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-hunter-green 3s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-hunter-green 3.4s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-hunter-green 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-hunter-green.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-hunter-green 3s alternate ease-in infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-hunter-green 3s alternate ease-in infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-hunter-green 3.4s alternate ease-out infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-hunter-green 3.4s alternate ease-out infinite;
 }
 
-@-webkit-keyframes animation-lightup-pale {
+@-webkit-keyframes animation-lightup-light-pink {
   from {
     box-shadow: none;
   }
   to {
-    box-shadow: 0 1px 70px 20px #DBCBBA;
+    box-shadow: 0 1px 70px 20px #C476BE;
   }
 }
-@keyframes animation-lightup-pale {
+@keyframes animation-lightup-light-pink {
   from {
     box-shadow: none;
   }
   to {
-    box-shadow: 0 1px 70px 20px #DBCBBA;
+    box-shadow: 0 1px 70px 20px #C476BE;
   }
 }
-.dot.theme-pale {
-  background: #DBCBBA;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-pale 3s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-pale 3s alternate ease-in infinite;
+.dot.theme-light-pink {
+  background: #C476BE;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-light-pink 3.4s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-light-pink 3.4s alternate ease-in infinite;
 }
 
-.dot.theme-pale.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-pale 3s alternate ease-in infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-pale 3s alternate ease-in infinite;
+.dot.theme-light-pink.reverse {
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-pink 3.4s alternate ease-out infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-pink 3.4s alternate ease-out infinite;
 }
 
 @-webkit-keyframes animation-lightup-carolina-blue {
@@ -178,13 +181,13 @@
 }
 .dot.theme-carolina-blue {
   background: #95C8EF;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-carolina-blue 3s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-carolina-blue 3s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-carolina-blue 3.4s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-carolina-blue 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-carolina-blue.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-carolina-blue 3s alternate ease-in infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-carolina-blue 3s alternate ease-in infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-carolina-blue 3.4s alternate ease-out infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-carolina-blue 3.4s alternate ease-out infinite;
 }
 
 /*# sourceMappingURL=style.css.map */

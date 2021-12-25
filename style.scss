@@ -1,11 +1,12 @@
 $bg-color: #0C121F;
 $circle-duration: 3.5s;
-$lightup-duration: 3s;
+$lightup-duration: 3.4s;
 $orbit-radius: 0.8em;
 
 html, body {
   background: #{$bg-color};
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -15,7 +16,7 @@ $dot-colors: (
   light-purple: #8191D1,
   dull-red: #8B3838,
   hunter-green: #3D8C94,
-  pale: #DBCBBA,
+  light-pink: #C476BE,
   carolina-blue: #95C8EF
 );
 
@@ -34,10 +35,12 @@ $dot-colors: (
 };
 
 .dot {
-  position: relative;
+  position: absolute;
   border-radius: 50%;
   height: 60px;
   width: 60px;
+  padding: 0px;
+  margin: 0px;
 }
 
 @include keyframes-animation(circular-animation) {
@@ -76,6 +79,6 @@ $dot-colors: (
 
   .dot.theme-#{$color-name}.reverse {
     @include prefix-property(animation, (circular-animation-reverse #{$circle-duration} normal infinite,
-    animation-lightup-#{$color-name} #{$lightup-duration} alternate ease-in infinite));
+    animation-lightup-#{$color-name} #{$lightup-duration} alternate ease-out infinite));
   }
 }
