@@ -1,7 +1,16 @@
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
 $bg-color: #0C121F;
 $circle-duration: 3.5s;
 $lightup-duration: 3.4s;
 $orbit-radius: 0.8em;
+$dot-radius: 40px;
+
+$container-bg-color: #070B17;
+$container-border-color: #547DA0;
+$container-width: 75%;
+$container-height: 80%;
 
 html, body {
   background: #{$bg-color};
@@ -9,6 +18,61 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+* {
+	user-select: none;
+}
+
+.content {
+  position: absolute;
+  width: $container-width;
+  height: $container-height;
+  left: math.div(calc(100% - $container-width), 2);
+  top: math.div(calc(100% - $container-height), 2);
+  background-color: #{$container-bg-color};
+  border: 20px solid #{$container-border-color};
+  box-shadow: 0 1px 50px #000;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 50px;
+  z-index: 2;
+}
+
+a {
+  font-size: 30px;
+  font-style: italic;
+  cursor: pointer;
+  transition-duration: 0.15s;
+  transform: none;
+  display: inline-block;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #FFF;
+}
+
+a:hover {
+  color: #AAA;
+  transform: scaleX( 1.1 );
+}
+
+.selfie {
+  width: 150px;
+  height: 150px;
+  border: 3px solid #FFF;
+  background-color: #577DF5;
+  border-radius: 50%;
+  margin-left: 50%;
+  transform: translateX( -50% );
+}
+
+img {
+  margin-top: 7px;
+  margin-left: -5px;
+  width: 120px;
+  height: 120px;
+  transform: scale( 1.55, 1.55 );
 }
 
 
@@ -37,10 +101,11 @@ $dot-colors: (
 .dot {
   position: absolute;
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: $dot-radius;
+  width: $dot-radius;
   padding: 0px;
   margin: 0px;
+  z-index: 1;
 }
 
 @include keyframes-animation(circular-animation) {
