@@ -1,0 +1,190 @@
+:root {
+  background: #0C121F;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.dot {
+  position: relative;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+@-webkit-keyframes circular-animation {
+  from {
+    -webkit-transform: rotate(0deg) translateX(0.8em);
+    transform: rotate(0deg) translateX(0.8em);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(0.8em);
+    transform: rotate(360deg) translateX(0.8em);
+  }
+}
+@keyframes circular-animation {
+  from {
+    -webkit-transform: rotate(0deg) translateX(0.8em);
+    transform: rotate(0deg) translateX(0.8em);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(0.8em);
+    transform: rotate(360deg) translateX(0.8em);
+  }
+}
+@-webkit-keyframes circular-animation-reverse {
+  from {
+    -webkit-transform: rotate(360deg) translateX(0.8em);
+    transform: rotate(360deg) translateX(0.8em);
+  }
+  to {
+    -webkit-transform: rotate(0deg) translateX(0.8em);
+    transform: rotate(0deg) translateX(0.8em);
+  }
+}
+@keyframes circular-animation-reverse {
+  from {
+    -webkit-transform: rotate(360deg) translateX(0.8em);
+    transform: rotate(360deg) translateX(0.8em);
+  }
+  to {
+    -webkit-transform: rotate(0deg) translateX(0.8em);
+    transform: rotate(0deg) translateX(0.8em);
+  }
+}
+@-webkit-keyframes animation-lightup-light-purple {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #8191D1;
+  }
+}
+@keyframes animation-lightup-light-purple {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #8191D1;
+  }
+}
+.dot.theme-light-purple {
+  background: #8191D1;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-light-purple 3s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-light-purple 3s alternate ease-in infinite;
+}
+
+.dot.theme-light-purple.reverse {
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-purple 3s alternate ease-in infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-purple 3s alternate ease-in infinite;
+}
+
+@-webkit-keyframes animation-lightup-dull-red {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #8B3838;
+  }
+}
+@keyframes animation-lightup-dull-red {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #8B3838;
+  }
+}
+.dot.theme-dull-red {
+  background: #8B3838;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-dull-red 3s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-dull-red 3s alternate ease-in infinite;
+}
+
+.dot.theme-dull-red.reverse {
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-dull-red 3s alternate ease-in infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-dull-red 3s alternate ease-in infinite;
+}
+
+@-webkit-keyframes animation-lightup-hunter-green {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #3D8C94;
+  }
+}
+@keyframes animation-lightup-hunter-green {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #3D8C94;
+  }
+}
+.dot.theme-hunter-green {
+  background: #3D8C94;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-hunter-green 3s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-hunter-green 3s alternate ease-in infinite;
+}
+
+.dot.theme-hunter-green.reverse {
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-hunter-green 3s alternate ease-in infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-hunter-green 3s alternate ease-in infinite;
+}
+
+@-webkit-keyframes animation-lightup-pale {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #DBCBBA;
+  }
+}
+@keyframes animation-lightup-pale {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #DBCBBA;
+  }
+}
+.dot.theme-pale {
+  background: #DBCBBA;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-pale 3s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-pale 3s alternate ease-in infinite;
+}
+
+.dot.theme-pale.reverse {
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-pale 3s alternate ease-in infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-pale 3s alternate ease-in infinite;
+}
+
+@-webkit-keyframes animation-lightup-carolina-blue {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #95C8EF;
+  }
+}
+@keyframes animation-lightup-carolina-blue {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 1px 70px 20px #95C8EF;
+  }
+}
+.dot.theme-carolina-blue {
+  background: #95C8EF;
+  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-carolina-blue 3s alternate ease-in infinite;
+  animation: circular-animation 3.5s normal infinite, animation-lightup-carolina-blue 3s alternate ease-in infinite;
+}
+
+.dot.theme-carolina-blue.reverse {
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-carolina-blue 3s alternate ease-in infinite;
+  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-carolina-blue 3s alternate ease-in infinite;
+}
+
+/*# sourceMappingURL=style.css.map */

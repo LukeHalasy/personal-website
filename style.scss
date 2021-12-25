@@ -1,0 +1,81 @@
+$bg-color: #0C121F;
+$circle-duration: 3.5s;
+$lightup-duration: 3s;
+$orbit-radius: 0.8em;
+
+html, body {
+  background: #{$bg-color};
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+$dot-colors: (
+  light-purple: #8191D1,
+  dull-red: #8B3838,
+  hunter-green: #3D8C94,
+  pale: #DBCBBA,
+  carolina-blue: #95C8EF
+);
+
+@mixin keyframes-animation($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+};
+
+@mixin prefix-property($name, $value) {
+  -webkit-#{$name}: $value;
+          #{$name}: $value;
+};
+
+.dot {
+  position: relative;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+@include keyframes-animation(circular-animation) {
+  from {
+    @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
+  }
+  to {
+    @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
+  }
+}
+
+@include keyframes-animation(circular-animation-reverse) {
+  from {
+    @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
+  }
+  to {
+    @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
+  }
+}
+
+@each $color-name, $color-value in $dot-colors {
+  @include keyframes-animation(animation-lightup-#{$color-name}) {
+    from {
+      box-shadow: none;
+    }
+    to {
+      box-shadow: 0 1px 70px 20px #{$color-value};
+    }
+  }
+
+  .dot.theme-#{$color-name} {
+    background: #{$color-value};
+    @include prefix-property(animation, (circular-animation #{$circle-duration} normal infinite,
+    animation-lightup-#{$color-name} #{$lightup-duration} alternate ease-in infinite));
+  }
+
+  .dot.theme-#{$color-name}.reverse {
+    @include prefix-property(animation, (circular-animation-reverse #{$circle-duration} normal infinite,
+    animation-lightup-#{$color-name} #{$lightup-duration} alternate ease-in infinite));
+  }
+}
