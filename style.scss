@@ -5,12 +5,19 @@ $bg-color: #0C121F;
 $circle-duration: 3.5s;
 $lightup-duration: 3.4s;
 $orbit-radius: 0.8em;
-$dot-radius: 40px;
+$dot-radius: 30px;
+$dot-colors: (
+  light-purple: #8191D1,
+  dull-red: #8B3838,
+  hunter-green: #3D8C94,
+  light-pink: #C476BE,
+  carolina-blue: #95C8EF
+);
 
 $container-bg-color: #070B17;
-$container-border-color: #547DA0;
+$container-border-color: #5096D3;
 $container-width: 75%;
-$container-height: 80%;
+$container-height: 85%;
 
 html, body {
   background: #{$bg-color};
@@ -30,18 +37,20 @@ html, body {
   height: $container-height;
   left: math.div(calc(100% - $container-width), 2);
   top: math.div(calc(100% - $container-height), 2);
+
   background-color: #{$container-bg-color};
   border: 20px solid #{$container-border-color};
   box-shadow: 0 1px 50px #000;
+
   color: #FFF;
   text-align: center;
   font-family: 'Roboto Mono', monospace;
-  font-size: 50px;
+  font-size: 5rem;
   z-index: 2;
 }
 
 a {
-  font-size: 30px;
+  font-size: 0.5em;
   font-style: italic;
   cursor: pointer;
   transition-duration: 0.15s;
@@ -75,14 +84,6 @@ img {
   transform: scale( 1.55, 1.55 );
 }
 
-
-$dot-colors: (
-  light-purple: #8191D1,
-  dull-red: #8B3838,
-  hunter-green: #3D8C94,
-  light-pink: #C476BE,
-  carolina-blue: #95C8EF
-);
 
 @mixin keyframes-animation($name) {
   @-webkit-keyframes #{$name} {
@@ -126,24 +127,40 @@ $dot-colors: (
   }
 }
 
-@each $color-name, $color-value in $dot-colors {
-  @include keyframes-animation(animation-lightup-#{$color-name}) {
-    from {
-      box-shadow: none;
-    }
-    to {
-      box-shadow: 0 1px 70px 20px #{$color-value};
-    }
+@include keyframes-animation(animation-lightup) {
+  from {
+    opacity: 0;    
   }
+  to {
+    opacity: 1;
+  }
+}
 
+@each $color-name, $color-value in $dot-colors {
   .dot.theme-#{$color-name} {
     background: #{$color-value};
-    @include prefix-property(animation, (circular-animation #{$circle-duration} normal infinite,
-    animation-lightup-#{$color-name} #{$lightup-duration} alternate ease-in infinite));
+    @include prefix-property(animation, circular-animation #{$circle-duration} normal infinite);
   }
 
+  
+  .dot.theme-#{$color-name}::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 0px;
+    opacity: 0;
+    background-color: transparent;
+
+    box-shadow: 0 1px 50px 10px #{$color-value};
+    @include prefix-property(animation, animation-lightup #{$lightup-duration} alternate ease-in infinite);
+  }
+  
+
   .dot.theme-#{$color-name}.reverse {
-    @include prefix-property(animation, (circular-animation-reverse #{$circle-duration} normal infinite,
-    animation-lightup-#{$color-name} #{$lightup-duration} alternate ease-out infinite));
+    @include prefix-property(animation, circular-animation-reverse #{$circle-duration} normal infinite);
   }
 }

@@ -14,21 +14,21 @@ html, body {
 .content {
   position: absolute;
   width: 75%;
-  height: 80%;
+  height: 85%;
   left: 12.5%;
-  top: 10%;
+  top: 7.5%;
   background-color: #070B17;
-  border: 20px solid #547DA0;
+  border: 20px solid #5096D3;
   box-shadow: 0 1px 50px #000;
   color: #FFF;
   text-align: center;
   font-family: "Roboto Mono", monospace;
-  font-size: 50px;
+  font-size: 5rem;
   z-index: 2;
 }
 
 a {
-  font-size: 30px;
+  font-size: 0.5em;
   font-style: italic;
   cursor: pointer;
   transition-duration: 0.15s;
@@ -65,8 +65,8 @@ img {
 .dot {
   position: absolute;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   padding: 0px;
   margin: 0px;
   z-index: 1;
@@ -112,139 +112,155 @@ img {
     transform: rotate(0deg) translateX(0.8em);
   }
 }
-@-webkit-keyframes animation-lightup-light-purple {
+@-webkit-keyframes animation-lightup {
   from {
-    box-shadow: none;
+    opacity: 0;
   }
   to {
-    box-shadow: 0 1px 70px 20px #8191D1;
+    opacity: 1;
   }
 }
-@keyframes animation-lightup-light-purple {
+@keyframes animation-lightup {
   from {
-    box-shadow: none;
+    opacity: 0;
   }
   to {
-    box-shadow: 0 1px 70px 20px #8191D1;
+    opacity: 1;
   }
 }
 .dot.theme-light-purple {
   background: #8191D1;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-light-purple 3.4s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-light-purple 3.4s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite;
+  animation: circular-animation 3.5s normal infinite;
+}
+
+.dot.theme-light-purple::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 0px;
+  opacity: 0;
+  background-color: transparent;
+  box-shadow: 0 1px 50px 10px #8191D1;
+  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
+  animation: animation-lightup 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-light-purple.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-purple 3.4s alternate ease-out infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-purple 3.4s alternate ease-out infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
+  animation: circular-animation-reverse 3.5s normal infinite;
 }
 
-@-webkit-keyframes animation-lightup-dull-red {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: 0 1px 70px 20px #8B3838;
-  }
-}
-@keyframes animation-lightup-dull-red {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: 0 1px 70px 20px #8B3838;
-  }
-}
 .dot.theme-dull-red {
   background: #8B3838;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-dull-red 3.4s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-dull-red 3.4s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite;
+  animation: circular-animation 3.5s normal infinite;
+}
+
+.dot.theme-dull-red::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 0px;
+  opacity: 0;
+  background-color: transparent;
+  box-shadow: 0 1px 50px 10px #8B3838;
+  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
+  animation: animation-lightup 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-dull-red.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-dull-red 3.4s alternate ease-out infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-dull-red 3.4s alternate ease-out infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
+  animation: circular-animation-reverse 3.5s normal infinite;
 }
 
-@-webkit-keyframes animation-lightup-hunter-green {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: 0 1px 70px 20px #3D8C94;
-  }
-}
-@keyframes animation-lightup-hunter-green {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: 0 1px 70px 20px #3D8C94;
-  }
-}
 .dot.theme-hunter-green {
   background: #3D8C94;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-hunter-green 3.4s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-hunter-green 3.4s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite;
+  animation: circular-animation 3.5s normal infinite;
+}
+
+.dot.theme-hunter-green::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 0px;
+  opacity: 0;
+  background-color: transparent;
+  box-shadow: 0 1px 50px 10px #3D8C94;
+  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
+  animation: animation-lightup 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-hunter-green.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-hunter-green 3.4s alternate ease-out infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-hunter-green 3.4s alternate ease-out infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
+  animation: circular-animation-reverse 3.5s normal infinite;
 }
 
-@-webkit-keyframes animation-lightup-light-pink {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: 0 1px 70px 20px #C476BE;
-  }
-}
-@keyframes animation-lightup-light-pink {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: 0 1px 70px 20px #C476BE;
-  }
-}
 .dot.theme-light-pink {
   background: #C476BE;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-light-pink 3.4s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-light-pink 3.4s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite;
+  animation: circular-animation 3.5s normal infinite;
+}
+
+.dot.theme-light-pink::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 0px;
+  opacity: 0;
+  background-color: transparent;
+  box-shadow: 0 1px 50px 10px #C476BE;
+  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
+  animation: animation-lightup 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-light-pink.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-pink 3.4s alternate ease-out infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-light-pink 3.4s alternate ease-out infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
+  animation: circular-animation-reverse 3.5s normal infinite;
 }
 
-@-webkit-keyframes animation-lightup-carolina-blue {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: 0 1px 70px 20px #95C8EF;
-  }
-}
-@keyframes animation-lightup-carolina-blue {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: 0 1px 70px 20px #95C8EF;
-  }
-}
 .dot.theme-carolina-blue {
   background: #95C8EF;
-  -webkit-animation: circular-animation 3.5s normal infinite, animation-lightup-carolina-blue 3.4s alternate ease-in infinite;
-  animation: circular-animation 3.5s normal infinite, animation-lightup-carolina-blue 3.4s alternate ease-in infinite;
+  -webkit-animation: circular-animation 3.5s normal infinite;
+  animation: circular-animation 3.5s normal infinite;
+}
+
+.dot.theme-carolina-blue::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 0px;
+  opacity: 0;
+  background-color: transparent;
+  box-shadow: 0 1px 50px 10px #95C8EF;
+  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
+  animation: animation-lightup 3.4s alternate ease-in infinite;
 }
 
 .dot.theme-carolina-blue.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-carolina-blue 3.4s alternate ease-out infinite;
-  animation: circular-animation-reverse 3.5s normal infinite, animation-lightup-carolina-blue 3.4s alternate ease-out infinite;
+  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
+  animation: circular-animation-reverse 3.5s normal infinite;
 }
 
 /*# sourceMappingURL=style.css.map */
