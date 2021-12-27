@@ -8,15 +8,15 @@
 	<a>Resume</a><br>
 	<a href="https://linkedin.com" target="_blank">LinkedIn</a><br>
 	<a>Projects</a>
-  
 </div>
 
 <script>
   window.onload = function() {
-    const numberOfDots = 200;
+    const numberOfDots = 400;
     
     // derived from the scss file
-    const color_names = ["light-purple", "dull-red", "hunter-green", "light-pink", "carolina-blue"]
+    // const color_names = ["light-purple", "dull-red", "hunter-green", "light-pink", "carolina-blue"]
+    const color_names = ["dark-green", "light-green"]
 
     var fragment = document.createDocumentFragment();
     const maxDelay = 2.5;
@@ -29,7 +29,10 @@
       var reverse = Math.random() < 0.5;
 
       dot.setAttribute("class", `dot theme-${color} ${reverse ? "reverse" : ""}`);
-      dot.style.animationDelay = Math.floor(Math.random() * maxDelay * (1 / precision)) / (1 / precision) + "s";
+      // dot.style.animationDelay = Math.floor(Math.random() * maxDelay * (1 / precision)) / (1 / precision) + "s";
+      var minCircleDurationTime = 4;
+      var maxCircleDurationTime = 7;
+      dot.style.animationDuration = Math.floor(Math.random() * (maxCircleDurationTime - minCircleDurationTime) * (1 / precision)) / (1 / precision) + minCircleDurationTime + "s"; + minCircleDurationTime + "s";
       dot.style.left = x + "%";
       dot.style.top = y + "%";
 
@@ -39,5 +42,4 @@
 
     document.body.appendChild(fragment);
   }
- 
 </script>

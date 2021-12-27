@@ -2,22 +2,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
 $bg-color: #0C121F;
-$circle-duration: 3.5s;
-$lightup-duration: 3.4s;
-$orbit-radius: 0.8em;
-$dot-radius: 30px;
+$lightup-duration: 2.4s;
+$orbit-radius: 0.45em;
+$dot-radius: 1.4em;
 $dot-colors: (
+  /*
   light-purple: #8191D1,
   dull-red: #8B3838,
   hunter-green: #3D8C94,
   light-pink: #C476BE,
-  carolina-blue: #95C8EF
+  carolina-blue: #95C8EF,
+  */
+  dark-green: #006F7B,
+  light-green: #003D54
 );
 
 $container-bg-color: #070B17;
-$container-border-color: #5096D3;
+// $container-border-color: #5096D3;
+$container-border-color: #00A286;
 $container-width: 75%;
 $container-height: 85%;
+
+$x-axis-animation-distance: .3em;
+$y-axis-animation-distance: .3em;
+
+$x-axis-animation-time: 2s;
+$y-axis-animation-time: 2s;
+$circle-animation-time: 4s;
 
 html, body {
   background: #{$bg-color};
@@ -25,6 +36,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 * {
@@ -40,7 +52,8 @@ html, body {
 
   background-color: #{$container-bg-color};
   border: 20px solid #{$container-border-color};
-  box-shadow: 0 1px 50px #000;
+  // box-shadow: 0 1px 50px #000;
+  border-radius: 1%;
 
   color: #FFF;
   text-align: center;
@@ -104,26 +117,31 @@ img {
   border-radius: 50%;
   height: $dot-radius;
   width: $dot-radius;
-  padding: 0px;
-  margin: 0px;
   z-index: 1;
+  opacity: 0;
 }
+
 
 @include keyframes-animation(circular-animation) {
   from {
     @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
+    @include prefix-property(opacity, 1);
   }
   to {
     @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
+    @include prefix-property(opacity, 1);
   }
 }
+
 
 @include keyframes-animation(circular-animation-reverse) {
   from {
     @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
+    @include prefix-property(opacity, 1);
   }
   to {
     @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
+    @include prefix-property(opacity, 1);
   }
 }
 
@@ -132,14 +150,39 @@ img {
     opacity: 0;    
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
+  }
+}
+
+
+@include keyframes-animation(x-axis) {
+  50% {
+    @include prefix-property(transform, translateX(#{$x-axis-animation-distance}));
+  }
+}
+
+@include keyframes-animation(y-axis) {
+  50% {
+    @include prefix-property(transform, translateY($y-axis-animation-distance*-1));
+  }
+}
+
+@include keyframes-animation(x-axis-reverse) {
+  50% {
+    @include prefix-property(transform, translateX($x-axis-animation-distance*-1));
+  }
+}
+
+@include keyframes-animation(y-axis-reverse) {
+  50% {
+    @include prefix-property(transform, translateY(#{$y-axis-animation-distance}));
   }
 }
 
 @each $color-name, $color-value in $dot-colors {
   .dot.theme-#{$color-name} {
     background: #{$color-value};
-    @include prefix-property(animation, circular-animation #{$circle-duration} normal infinite);
+    @include prefix-property(animation, circular-animation #{$circle-animation-time} normal infinite)
   }
 
   
@@ -161,6 +204,6 @@ img {
   
 
   .dot.theme-#{$color-name}.reverse {
-    @include prefix-property(animation, circular-animation-reverse #{$circle-duration} normal infinite);
+    @include prefix-property(animation, circular-animation-reverse #{$circle-animation-time} normal infinite)
   }
 }

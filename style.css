@@ -5,6 +5,7 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 * {
@@ -18,8 +19,8 @@ html, body {
   left: 12.5%;
   top: 7.5%;
   background-color: #070B17;
-  border: 20px solid #5096D3;
-  box-shadow: 0 1px 50px #000;
+  border: 20px solid #00A286;
+  border-radius: 1%;
   color: #FFF;
   text-align: center;
   font-family: "Roboto Mono", monospace;
@@ -65,51 +66,66 @@ img {
 .dot {
   position: absolute;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  padding: 0px;
-  margin: 0px;
+  height: 1.4em;
+  width: 1.4em;
   z-index: 1;
+  opacity: 0;
 }
 
 @-webkit-keyframes circular-animation {
   from {
-    -webkit-transform: rotate(0deg) translateX(0.8em);
-    transform: rotate(0deg) translateX(0.8em);
+    -webkit-transform: rotate(0deg) translateX(0.45em);
+    transform: rotate(0deg) translateX(0.45em);
+    -webkit-opacity: 1;
+    opacity: 1;
   }
   to {
-    -webkit-transform: rotate(360deg) translateX(0.8em);
-    transform: rotate(360deg) translateX(0.8em);
+    -webkit-transform: rotate(360deg) translateX(0.45em);
+    transform: rotate(360deg) translateX(0.45em);
+    -webkit-opacity: 1;
+    opacity: 1;
   }
 }
 @keyframes circular-animation {
   from {
-    -webkit-transform: rotate(0deg) translateX(0.8em);
-    transform: rotate(0deg) translateX(0.8em);
+    -webkit-transform: rotate(0deg) translateX(0.45em);
+    transform: rotate(0deg) translateX(0.45em);
+    -webkit-opacity: 1;
+    opacity: 1;
   }
   to {
-    -webkit-transform: rotate(360deg) translateX(0.8em);
-    transform: rotate(360deg) translateX(0.8em);
+    -webkit-transform: rotate(360deg) translateX(0.45em);
+    transform: rotate(360deg) translateX(0.45em);
+    -webkit-opacity: 1;
+    opacity: 1;
   }
 }
 @-webkit-keyframes circular-animation-reverse {
   from {
-    -webkit-transform: rotate(360deg) translateX(0.8em);
-    transform: rotate(360deg) translateX(0.8em);
+    -webkit-transform: rotate(360deg) translateX(0.45em);
+    transform: rotate(360deg) translateX(0.45em);
+    -webkit-opacity: 1;
+    opacity: 1;
   }
   to {
-    -webkit-transform: rotate(0deg) translateX(0.8em);
-    transform: rotate(0deg) translateX(0.8em);
+    -webkit-transform: rotate(0deg) translateX(0.45em);
+    transform: rotate(0deg) translateX(0.45em);
+    -webkit-opacity: 1;
+    opacity: 1;
   }
 }
 @keyframes circular-animation-reverse {
   from {
-    -webkit-transform: rotate(360deg) translateX(0.8em);
-    transform: rotate(360deg) translateX(0.8em);
+    -webkit-transform: rotate(360deg) translateX(0.45em);
+    transform: rotate(360deg) translateX(0.45em);
+    -webkit-opacity: 1;
+    opacity: 1;
   }
   to {
-    -webkit-transform: rotate(0deg) translateX(0.8em);
-    transform: rotate(0deg) translateX(0.8em);
+    -webkit-transform: rotate(0deg) translateX(0.45em);
+    transform: rotate(0deg) translateX(0.45em);
+    -webkit-opacity: 1;
+    opacity: 1;
   }
 }
 @-webkit-keyframes animation-lightup {
@@ -117,7 +133,7 @@ img {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 @keyframes animation-lightup {
@@ -125,16 +141,64 @@ img {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
-.dot.theme-light-purple {
-  background: #8191D1;
-  -webkit-animation: circular-animation 3.5s normal infinite;
-  animation: circular-animation 3.5s normal infinite;
+@-webkit-keyframes x-axis {
+  50% {
+    -webkit-transform: translateX(0.3em);
+    transform: translateX(0.3em);
+  }
+}
+@keyframes x-axis {
+  50% {
+    -webkit-transform: translateX(0.3em);
+    transform: translateX(0.3em);
+  }
+}
+@-webkit-keyframes y-axis {
+  50% {
+    -webkit-transform: translateY(-0.3em);
+    transform: translateY(-0.3em);
+  }
+}
+@keyframes y-axis {
+  50% {
+    -webkit-transform: translateY(-0.3em);
+    transform: translateY(-0.3em);
+  }
+}
+@-webkit-keyframes x-axis-reverse {
+  50% {
+    -webkit-transform: translateX(-0.3em);
+    transform: translateX(-0.3em);
+  }
+}
+@keyframes x-axis-reverse {
+  50% {
+    -webkit-transform: translateX(-0.3em);
+    transform: translateX(-0.3em);
+  }
+}
+@-webkit-keyframes y-axis-reverse {
+  50% {
+    -webkit-transform: translateY(0.3em);
+    transform: translateY(0.3em);
+  }
+}
+@keyframes y-axis-reverse {
+  50% {
+    -webkit-transform: translateY(0.3em);
+    transform: translateY(0.3em);
+  }
+}
+.dot.theme-dark-green {
+  background: #006F7B;
+  -webkit-animation: circular-animation 4s normal infinite;
+  animation: circular-animation 4s normal infinite;
 }
 
-.dot.theme-light-purple::after {
+.dot.theme-dark-green::after {
   content: "";
   position: absolute;
   top: 0;
@@ -145,23 +209,23 @@ img {
   border: 0px;
   opacity: 0;
   background-color: transparent;
-  box-shadow: 0 1px 50px 10px #8191D1;
-  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
-  animation: animation-lightup 3.4s alternate ease-in infinite;
+  box-shadow: 0 1px 50px 10px #006F7B;
+  -webkit-animation: animation-lightup 2.4s alternate ease-in infinite;
+  animation: animation-lightup 2.4s alternate ease-in infinite;
 }
 
-.dot.theme-light-purple.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
-  animation: circular-animation-reverse 3.5s normal infinite;
+.dot.theme-dark-green.reverse {
+  -webkit-animation: circular-animation-reverse 4s normal infinite;
+  animation: circular-animation-reverse 4s normal infinite;
 }
 
-.dot.theme-dull-red {
-  background: #8B3838;
-  -webkit-animation: circular-animation 3.5s normal infinite;
-  animation: circular-animation 3.5s normal infinite;
+.dot.theme-light-green {
+  background: #003D54;
+  -webkit-animation: circular-animation 4s normal infinite;
+  animation: circular-animation 4s normal infinite;
 }
 
-.dot.theme-dull-red::after {
+.dot.theme-light-green::after {
   content: "";
   position: absolute;
   top: 0;
@@ -172,95 +236,14 @@ img {
   border: 0px;
   opacity: 0;
   background-color: transparent;
-  box-shadow: 0 1px 50px 10px #8B3838;
-  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
-  animation: animation-lightup 3.4s alternate ease-in infinite;
+  box-shadow: 0 1px 50px 10px #003D54;
+  -webkit-animation: animation-lightup 2.4s alternate ease-in infinite;
+  animation: animation-lightup 2.4s alternate ease-in infinite;
 }
 
-.dot.theme-dull-red.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
-  animation: circular-animation-reverse 3.5s normal infinite;
-}
-
-.dot.theme-hunter-green {
-  background: #3D8C94;
-  -webkit-animation: circular-animation 3.5s normal infinite;
-  animation: circular-animation 3.5s normal infinite;
-}
-
-.dot.theme-hunter-green::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 50%;
-  border: 0px;
-  opacity: 0;
-  background-color: transparent;
-  box-shadow: 0 1px 50px 10px #3D8C94;
-  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
-  animation: animation-lightup 3.4s alternate ease-in infinite;
-}
-
-.dot.theme-hunter-green.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
-  animation: circular-animation-reverse 3.5s normal infinite;
-}
-
-.dot.theme-light-pink {
-  background: #C476BE;
-  -webkit-animation: circular-animation 3.5s normal infinite;
-  animation: circular-animation 3.5s normal infinite;
-}
-
-.dot.theme-light-pink::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 50%;
-  border: 0px;
-  opacity: 0;
-  background-color: transparent;
-  box-shadow: 0 1px 50px 10px #C476BE;
-  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
-  animation: animation-lightup 3.4s alternate ease-in infinite;
-}
-
-.dot.theme-light-pink.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
-  animation: circular-animation-reverse 3.5s normal infinite;
-}
-
-.dot.theme-carolina-blue {
-  background: #95C8EF;
-  -webkit-animation: circular-animation 3.5s normal infinite;
-  animation: circular-animation 3.5s normal infinite;
-}
-
-.dot.theme-carolina-blue::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 50%;
-  border: 0px;
-  opacity: 0;
-  background-color: transparent;
-  box-shadow: 0 1px 50px 10px #95C8EF;
-  -webkit-animation: animation-lightup 3.4s alternate ease-in infinite;
-  animation: animation-lightup 3.4s alternate ease-in infinite;
-}
-
-.dot.theme-carolina-blue.reverse {
-  -webkit-animation: circular-animation-reverse 3.5s normal infinite;
-  animation: circular-animation-reverse 3.5s normal infinite;
+.dot.theme-light-green.reverse {
+  -webkit-animation: circular-animation-reverse 4s normal infinite;
+  animation: circular-animation-reverse 4s normal infinite;
 }
 
 /*# sourceMappingURL=style.css.map */
