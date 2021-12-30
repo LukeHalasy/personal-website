@@ -1,5 +1,3 @@
-@use "sass:math";
-
 html, body {
   height: 100%;
   width: 100%;
@@ -16,14 +14,10 @@ html, body {
   align-items: center;
 }
 
-$house_one_width: 20rem;
-
-$house_one_width_height_ratio: math.div(7, 5);
-
 .house_one {
   position: relative;
-  width: $house_one_width;
-  height: $house_one_width * $house_one_width_height_ratio;
+  width: 20rem;
+  height: 28rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +29,6 @@ $house_one_width_height_ratio: math.div(7, 5);
   width: 90%;
   height: 75%;
   bottom: 0em;
-
   background-color: #03384D;
   border-bottom: 0.9em solid white;
   border-right: 0.5em solid white;
@@ -43,65 +36,53 @@ $house_one_width_height_ratio: math.div(7, 5);
 }
 
 .house_one .wall:before {
-  content: '';
+  content: "";
   position: absolute;
   left: -0.5em;
   width: calc(100% + 0.5em + 0.5em - 0.2em - 0.2em);
   height: calc(100% + 0.9em - 0.2em);
-
   background-color: transparent;
   border-bottom: 0.2em solid black;
   border-right: 0.2em solid black;
   border-left: 0.2em solid black;
 }
 
-
-$roof-home-one-border-top-size: 1.2em;
-$roof-home-one-border-bottom-size: 1em;
-
 .house_one .roof {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
   position: absolute;
   width: 100%;
   height: 25%;
   top: 0em;
-
   background: black;
-
-  border-top: #{$roof-home-one-border-top-size} solid white;
-  border-bottom: #{$roof-home-one-border-bottom-size} solid white;
+  border-top: 1.2em solid white;
+  border-bottom: 1em solid white;
 }
 
-
 .house_one .roof::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   bottom: 0em;
   background: transparent;
-  box-shadow: 0 0 #{$roof-home-one-border-bottom-size} 0em #000000;
-  clip-path: inset(0 0 -#{$roof-home-one-border-bottom-size} 0);
+  box-shadow: 0 0 1em 0em #000000;
+  clip-path: inset(0 0 -1em 0);
 }
 
-$roof-after-bottom-size: 0.24em;
-$roof-after-top-size: 0.24em;
-
 .house_one .roof::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: -#{$roof-home-one-border-top-size};
+  top: -1.2em;
   width: 100%;
-  height: calc(100% + $roof-home-one-border-bottom-size + $roof-home-one-border-top-size - $roof-after-top-size - $roof-after-bottom-size);
+  height: calc(100% + 1em + 1.2em - 0.24em - 0.24em);
   background: transparent;
   border-left: 0.15em solid black;
   border-right: 0.15em solid black;
-  border-top: #{$roof-after-top-size} solid black;
-  border-bottom: #{$roof-after-bottom-size} solid black;
+  border-top: 0.24em solid black;
+  border-bottom: 0.24em solid black;
 }
 
 .house_one .window {
@@ -114,35 +95,31 @@ $roof-after-top-size: 0.24em;
   align-items: center;
 }
 
-.house_one .window::before {
-  content: '';
+.house_one .window .window-roof {
+  content: "";
   position: absolute;
   top: -15%;
   left: -25%;
   width: 150%;
   height: 45%;
-  background-color: grey; 
+  background-color: grey;
   clip-path: polygon(0% 100%, 17% 100%, 50% 34%, 83% 100%, 100% 100%, 50% 0%);
 }
 
 .house_one .window .top-glass {
-  position: absolute; 
+  position: absolute;
   width: 70%;
   height: 27%;
   top: 25%;
-  // box-shadow: 0 1.5em #3E677E;
   border: 1px solid black;
-  background-color: #CBF7FF;
+  background-color: lightblue;
 }
 
 .house_one .window .bottom-glass {
-  position: absolute; 
+  position: absolute;
   width: 70%;
   height: 27%;
   top: 58%;
   border: 1px solid black;
   background-color: #3E677E;
-
 }
-
-
