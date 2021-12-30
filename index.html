@@ -1,13 +1,15 @@
 <link rel="stylesheet" href="style.css">
+<title>Portfolio | Luke Halasy</title>
 
-<div class="content">
-	<br>
-	Luke Halasy
-	<br>
-	<br>
-	<a>Resume</a><br>
-	<a href="https://linkedin.com" target="_blank">LinkedIn</a><br>
-	<a>Projects</a>
+<div class="content-container">
+  <div class="content">
+    <div class="title">Luke Halasy</div>
+    <div class="link-cards">
+      <div><a>Resume</a></div>
+      <div><a href="https://linkedin.com" target="_blank">LinkedIn</a></div>
+      <div><a>Projects</a></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -17,6 +19,8 @@
     // derived from the scss file
     // const color_names = ["light-purple", "dull-red", "hunter-green", "light-pink", "carolina-blue"]
     const color_names = ["dark-green", "light-green"]
+    const content_width_percentage = 75;
+    const content_height_percentage = 85;
 
     var fragment = document.createDocumentFragment();
     const maxDelay = 2.5;

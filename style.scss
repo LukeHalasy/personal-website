@@ -1,10 +1,10 @@
 @use "sass:math";
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Lora:ital,wght@0,400;1,500&family=Roboto+Mono:wght@500&display=swap');
 
 $bg-color: #0C121F;
-$lightup-duration: 2.4s;
+$lightup-duration: 1.8s;
 $orbit-radius: 0.45em;
-$dot-radius: 1.4em;
+$dot-radius: 0.7em;
 $dot-colors: (
   /*
   light-purple: #8191D1,
@@ -17,18 +17,20 @@ $dot-colors: (
   light-green: #003D54
 );
 
+$content-text-color: #F7F9FF;
+// $content-text-color: #FFF;
 $container-bg-color: #070B17;
 // $container-border-color: #5096D3;
 $container-border-color: #00A286;
-$container-width: 75%;
+$container-border-width: 0.3rem;
+$container-width: 80%;
 $container-height: 85%;
+// $title-underline-color: #006B77;
+$title-underline-color: #348995;
+$link-cards-color-one: #003D54;
+$link-cards-color-two: #006F7B;
 
-$x-axis-animation-distance: .3em;
-$y-axis-animation-distance: .3em;
-
-$x-axis-animation-time: 2s;
-$y-axis-animation-time: 2s;
-$circle-animation-time: 4s;
+$circle-animation-time: 5s;
 
 html, body {
   background: #{$bg-color};
@@ -43,40 +45,136 @@ html, body {
 	user-select: none;
 }
 
+.content-container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .content {
-  position: absolute;
   width: $container-width;
   height: $container-height;
-  left: math.div(calc(100% - $container-width), 2);
-  top: math.div(calc(100% - $container-height), 2);
+  // left: math.div(calc(100% - $container-width), 2);
+  // top: math.div(calc(100% - $container-height), 2);
 
   background-color: #{$container-bg-color};
-  border: 20px solid #{$container-border-color};
+  border: #{$container-border-width} solid #{$container-border-color};
   // box-shadow: 0 1px 50px #000;
-  border-radius: 1%;
+  border-radius: 0.2%;
 
-  color: #FFF;
+  display: flex;
+  flex-direction: row;
+
+  color: #{$content-text-color};
   text-align: center;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 5rem;
+  // font-family: 'Roboto Mono', monospace;
+  font-size: 5.0rem;
   z-index: 2;
 }
 
-a {
-  font-size: 0.5em;
-  font-style: italic;
-  cursor: pointer;
-  transition-duration: 0.15s;
-  transform: none;
-  display: inline-block;
-  margin-bottom: 5px;
-  text-decoration: none;
-  color: #FFF;
+.content .title {
+  transform: scale(1.00);
+  transition: 0.35s;
 }
 
-a:hover {
-  color: #AAA;
-  transform: scaleX( 1.1 );
+.content .title:hover {
+  transform: scale(1.01);
+  transition: 0.35s;
+}
+
+.content .link-cards div a {
+  transform: scale(1.00);
+  transition: 0.35s;
+}
+
+.content .link-cards div:hover a {
+  transform: scale(1.03);
+  transition: 0.35s;
+}
+
+.title {
+  font-size: 1.2em;
+  text-decoration: underline;
+  text-decoration-color: #{$title-underline-color};
+  text-decoration-thickness: 0.08em;
+  font-family: 'Lora', serif;
+  margin-top: 0.5em;
+  font-style: italic;
+  flex-grow: 4;
+}
+
+.link-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 3;
+}
+
+.link-cards div {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #{$link-cards-color-one};
+}
+
+.link-cards div:nth-child(2) {
+  background-color: #{$link-cards-color-two};
+}
+
+/*
+@keyframes typing {
+  from { width: 0% }
+  to { width: 100% }
+}
+*/
+
+/* The typewriter cursor effect */
+/*
+@keyframes blink-caret {
+  from {
+    border-color: transparent; 
+  } 50% {
+    border-color: #{$container-border-color} ;
+  } to {
+    border-color: transparent; 
+  }
+}
+*/
+
+a {
+  position: relative;
+  font-size: 0.65em;
+  font-family: 'Lora', serif;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #{$content-text-color};
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+.content .link-cards div:hover a::before {
+  transform: scaleX(1);
 }
 
 .selfie {
@@ -124,11 +222,11 @@ img {
 
 @include keyframes-animation(circular-animation) {
   from {
-    @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
+    // @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
     @include prefix-property(opacity, 1);
   }
   to {
-    @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
+    // @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
     @include prefix-property(opacity, 1);
   }
 }
@@ -136,11 +234,11 @@ img {
 
 @include keyframes-animation(circular-animation-reverse) {
   from {
-    @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
+    // @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
     @include prefix-property(opacity, 1);
   }
   to {
-    @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
+    // @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
     @include prefix-property(opacity, 1);
   }
 }
@@ -150,32 +248,7 @@ img {
     opacity: 0;    
   }
   to {
-    opacity: 0.8;
-  }
-}
-
-
-@include keyframes-animation(x-axis) {
-  50% {
-    @include prefix-property(transform, translateX(#{$x-axis-animation-distance}));
-  }
-}
-
-@include keyframes-animation(y-axis) {
-  50% {
-    @include prefix-property(transform, translateY($y-axis-animation-distance*-1));
-  }
-}
-
-@include keyframes-animation(x-axis-reverse) {
-  50% {
-    @include prefix-property(transform, translateX($x-axis-animation-distance*-1));
-  }
-}
-
-@include keyframes-animation(y-axis-reverse) {
-  50% {
-    @include prefix-property(transform, translateY(#{$y-axis-animation-distance}));
+    opacity: 1;
   }
 }
 
@@ -198,7 +271,7 @@ img {
     opacity: 0;
     background-color: transparent;
 
-    box-shadow: 0 1px 50px 10px #{$color-value};
+    box-shadow: 0 1px 40px 10px #{$color-value};
     @include prefix-property(animation, animation-lightup #{$lightup-duration} alternate ease-in infinite);
   }
   
