@@ -1,0 +1,127 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #009F85;
+}
+
+.center {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.house_one {
+  position: relative;
+  width: 20rem;
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.house_one .wall {
+  position: absolute;
+  width: 90%;
+  height: 75%;
+  bottom: 0em;
+  background-color: #03384D;
+  border-bottom: 0.9em solid white;
+  border-right: 0.5em solid white;
+  border-left: 0.5em solid white;
+}
+
+.house_one .wall:before {
+  content: "";
+  position: absolute;
+  left: -0.5em;
+  width: calc(100% + 0.5em + 0.5em - 0.2em - 0.2em);
+  height: calc(100% + 0.9em - 0.2em);
+  background-color: transparent;
+  border-bottom: 0.2em solid black;
+  border-right: 0.2em solid black;
+  border-left: 0.2em solid black;
+}
+
+.house_one .roof {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  top: 0em;
+  background: black;
+  border-top: 1.2em solid white;
+  border-bottom: 1em solid white;
+}
+
+.house_one .roof::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0em;
+  background: transparent;
+  box-shadow: 0 0 1em 0em #000000;
+  clip-path: inset(0 0 -1em 0);
+}
+
+.house_one .roof::after {
+  content: "";
+  position: absolute;
+  top: -1.2em;
+  width: 100%;
+  height: calc(100% + 1em + 1.2em - 0.24em - 0.24em);
+  background: transparent;
+  border-left: 0.15em solid black;
+  border-right: 0.15em solid black;
+  border-top: 0.24em solid black;
+  border-bottom: 0.24em solid black;
+}
+
+.house_one .window {
+  position: relative;
+  width: 20%;
+  height: 70%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.house_one .window::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: -25%;
+  width: 150%;
+  height: 45%;
+  background-color: grey;
+  clip-path: polygon(0% 100%, 17% 100%, 50% 34%, 83% 100%, 100% 100%, 50% 0%);
+}
+
+.house_one .window .top-glass {
+  position: absolute;
+  width: 70%;
+  height: 27%;
+  top: 25%;
+  border: 1px solid black;
+  background-color: #CBF7FF;
+}
+
+.house_one .window .bottom-glass {
+  position: absolute;
+  width: 70%;
+  height: 27%;
+  top: 58%;
+  border: 1px solid black;
+  background-color: #3E677E;
+}
+
+/*# sourceMappingURL=newfoundland.css.map */
