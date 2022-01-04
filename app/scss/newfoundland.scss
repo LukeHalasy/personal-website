@@ -1,9 +1,59 @@
 @use "sass:math";
 
-html, body {
+$bg-color: #30395C;
+
+html, body, .vsc-initialized {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background: #{$bg-color};
 }
+
+.town-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.houses-container {
+  position: relative;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 100%;
+  height: 70%;
+  border: 1px solid black;
+}
+
+.houses-container img {
+  height: 100%;
+}
+
+
+.wave-container {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background: #000000;
+  border: 0px;
+}
+
+.wave-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  bottom: 0;
+  left: 0;
+  border: 0px;
+  background-image: url("../images/wave.svg");
+}
+
+
