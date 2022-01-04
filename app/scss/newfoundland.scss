@@ -15,25 +15,46 @@ html, body, .vsc-initialized {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 40%;
+  height: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
 }
 
 .houses-container {
   position: relative;
   flex-direction: row;
-  align-items: flex-end;
-  width: 100%;
+  align-items: bottom;
+  justify-content: start;
+  flex-wrap: nowrap;
+  width: 120%;
   height: 70%;
-  border: 1px solid black;
+  padding: 0px;
+  overflow: hidden;
 }
 
-.houses-container img {
-  height: 100%;
+// make sure this matches up with the html
+$max-homes: 17;
+$home-heights: ();
+$home-widths: ();
+
+$percentage-per-house: math.div(1, $max-homes);
+
+@for $i from 1 to $max-homes {
+  // $home-heights: append($home-heights, math.div(85 + random(15), 100));
+  $home-widths: append($home-widths, ($percentage-per-house + (math.div(random(2), 100))));
 }
+
+@for $i from 1 to $max-homes {
+  .houses-container>img:nth-child(#{$i}) {
+    width: #{nth($home-widths, $i) * 100%};
+    max-height: 100%;
+    padding: 0px;
+    margin-left: -3.25px;
+    // height: #{nth($home-heights, $i) * 100%};
+  }
+}
+
 
 
 .wave-container {
