@@ -14,7 +14,8 @@
           #{$name}: $value;
 };
 
-$bg-color: #30395C;
+// $bg-color: #30395C;
+$bg-color: #e2e2e2;
 
 html, body, .vsc-initialized {
   height: 100%;
@@ -23,6 +24,14 @@ html, body, .vsc-initialized {
   padding: 0;
   overflow: hidden;
   background: #{$bg-color};
+}
+
+.sky-container {
+  position: absolute;
+  top: 0;
+  height: 55%;
+  width: 100%;
+
 }
 
 .town-container {
@@ -37,47 +46,56 @@ html, body, .vsc-initialized {
 
 .houses-container {
   position: relative;
+  display: flex;
   flex-direction: row;
-  align-items: bottom;
-  justify-content: start;
+  align-items: flex-end;
+  justify-content: flex-start;
   flex-wrap: nowrap;
-  width: 120%;
-  height: 75%;
+  width: 100%;
+  height: 70%;
   padding: 0px;
+  left: 0px;
   overflow: hidden;
 }
 
 // make sure this matches up with the html
-$max-homes: 17;
+$max-homes: 20;
 $home-heights: ();
 $home-widths: ();
 
 $percentage-per-house: math.div(1, $max-homes);
+$precision: 0.01;
 
 @for $i from 1 to $max-homes {
-  // $home-heights: append($home-heights, math.div(85 + random(15), 100));
-  $home-widths: append($home-widths, ($percentage-per-house + (math.div(random(2), 100))));
+  $home-heights: append($home-heights, math.div(85 + random(15), 100));
+  $home-widths: append($home-widths, ($percentage-per-house + math.div((math.random() * 1.5), 100)));
 }
 
 @for $i from 1 to $max-homes {
   .houses-container>img:nth-child(#{$i}) {
     width: #{nth($home-widths, $i) * 100%};
-        // height: #{nth($home-heights, $i) * 100%};
   }
 }
 
 .houses-container img {
   max-height: 100%;
   padding: 0px;
-  box-shadow: 0 -10px 30px 0px #000000;
+}
+
+.sky-container .snow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #acacac;
 }
 
 .wave-container {
   position: absolute;
   width: 100%;
-  height: 25%;
+  height: 30%;
   bottom: 0px;
-  background: #000000;
+  background: #{$bg-color};
   border: 0px;
 }
 
@@ -86,24 +104,54 @@ $percentage-per-house: math.div(1, $max-homes);
     transform: scaleX(1) translateY(0%);    
 
   } to {
-    transform: scaleX(1.05) translateY(13%);
+    transform: scaleX(1.05) translateY(7%);
   }
 }
 
+@include keyframes-animation(move-boat) {
+  0% {
+    transform: translateY(0%);    
+    right: -8%;
+  } 20% {
+    transform: translateY(7%);    
+  } 40% {
+    transform: translateY(0%);    
+  } 60% {
+    transform: translateY(7%);    
+  } 80% {
+    transform: translateY(0%);    
+  } 100% {
+    transform: translateY(0%);    
+    // transform: translateX(-100%) translateY(7%);
+    right: 100%;
+  }
+}
+
+
 $wave-duration: 5s;
+$boat-duration: 35s;
 
 .wave-container::after {
   content: '';
   position: absolute;
   width: 100%;
-  height: 70%;
+  height: 80%;
   bottom: 0;
   left: 0;
   border: 0px;
   background-image: url("../images/wave.svg");
-  background-size: 45% 100%;
-
+  background-size: 60% 100%;
   @include prefix-property(animation, move-wave #{$wave-duration} alternate ease-in-out infinite);
 }
+
+.wave-container .boat {
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  width: 7%;
+  z-index: 1;
+  @include prefix-property(animation, move-boat #{$boat-duration} linear infinite);
+}
+
 
 
