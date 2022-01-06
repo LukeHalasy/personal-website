@@ -1,7 +1,252 @@
-html, body {
+html, body, .vsc-initialized {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background: #e2e2e2;
+}
+
+.sky-container {
+  position: absolute;
+  top: 0;
+  height: 55%;
+  width: 100%;
+}
+
+.sky-container .main-content {
+  position: relative;
+  left: calc(50% - 49%/2);
+  top: calc(50% - 84%/2.5);
+  width: 49%;
+  height: 84%;
+  background: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sky-container .main-content .text-container {
+  color: #e2e2e2;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.15em;
+  text-align: center;
+}
+
+.sky-container .main-content::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 97%/2);
+  top: calc(50% - 93%/2);
+  width: 97%;
+  height: 93%;
+  background: transparent;
+  border: 2px solid #e2e2e2;
+}
+
+.town-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.houses-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 70%;
+  padding: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.houses-container > img:nth-child(1) {
+  width: 6.0796327651%;
+}
+
+.houses-container > img:nth-child(2) {
+  width: 5.8873835352%;
+}
+
+.houses-container > img:nth-child(3) {
+  width: 5.0065492914%;
+}
+
+.houses-container > img:nth-child(4) {
+  width: 5.5865630088%;
+}
+
+.houses-container > img:nth-child(5) {
+  width: 6.3162887537%;
+}
+
+.houses-container > img:nth-child(6) {
+  width: 5.2364780621%;
+}
+
+.houses-container > img:nth-child(7) {
+  width: 6.4654656274%;
+}
+
+.houses-container > img:nth-child(8) {
+  width: 6.1459041669%;
+}
+
+.houses-container > img:nth-child(9) {
+  width: 5.543017128%;
+}
+
+.houses-container > img:nth-child(10) {
+  width: 5.0809724612%;
+}
+
+.houses-container > img:nth-child(11) {
+  width: 5.4111136028%;
+}
+
+.houses-container > img:nth-child(12) {
+  width: 6.0272355435%;
+}
+
+.houses-container > img:nth-child(13) {
+  width: 5.5884492446%;
+}
+
+.houses-container > img:nth-child(14) {
+  width: 5.3204901468%;
+}
+
+.houses-container > img:nth-child(15) {
+  width: 5.8722356236%;
+}
+
+.houses-container > img:nth-child(16) {
+  width: 5.2691559822%;
+}
+
+.houses-container > img:nth-child(17) {
+  width: 5.8912230496%;
+}
+
+.houses-container > img:nth-child(18) {
+  width: 5.1261563868%;
+}
+
+.houses-container > img:nth-child(19) {
+  width: 5.9475997984%;
+}
+
+.houses-container img {
+  max-height: 100%;
+  padding: 0px;
+}
+
+.sky-container .snow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #acacac;
+}
+
+.wave-container {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0px;
+  background: #e2e2e2;
+  border: 0px;
+}
+
+@-webkit-keyframes move-wave {
+  from {
+    transform: scaleX(1) translateY(0%);
+  }
+  to {
+    transform: scaleX(1.05) translateY(7%);
+  }
+}
+@keyframes move-wave {
+  from {
+    transform: scaleX(1) translateY(0%);
+  }
+  to {
+    transform: scaleX(1.05) translateY(7%);
+  }
+}
+@-webkit-keyframes move-boat {
+  0% {
+    transform: translateY(0%);
+    right: -8%;
+  }
+  20% {
+    transform: translateY(7%);
+  }
+  40% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: translateY(7%);
+  }
+  80% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+    right: 100%;
+  }
+}
+@keyframes move-boat {
+  0% {
+    transform: translateY(0%);
+    right: -8%;
+  }
+  20% {
+    transform: translateY(7%);
+  }
+  40% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: translateY(7%);
+  }
+  80% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+    right: 100%;
+  }
+}
+.wave-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  bottom: 0;
+  left: 0;
+  border: 0px;
+  background-image: url("../images/wave.svg");
+  background-size: 60% 100%;
+  -webkit-animation: move-wave 5s alternate ease-in-out infinite;
+  animation: move-wave 5s alternate ease-in-out infinite;
+}
+
+.wave-container .boat {
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  width: 7%;
+  z-index: 1;
+  -webkit-animation: move-boat 35s linear infinite;
+  animation: move-boat 35s linear infinite;
 }

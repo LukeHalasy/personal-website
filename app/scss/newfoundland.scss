@@ -34,6 +34,44 @@ html, body, .vsc-initialized {
 
 }
 
+$main-content-width: 49%;
+$main-content-height: 84%;
+
+.sky-container .main-content {
+  position: relative;
+  left: calc(50% - math.div(#{$main-content-width}, 2));
+  top: calc(50% - math.div(#{$main-content-height}, 2.5));
+  width: #{$main-content-width};
+  height: #{$main-content-height};
+  background: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sky-container .main-content .text-container {
+  color: #{$bg-color};
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.15em;
+  text-align: center;
+}
+
+$border-box-width: 97%;
+$border-box-height: 93%;
+
+.sky-container .main-content::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - math.div(#{$border-box-width}, 2));
+  top: calc(50% - math.div(#{$border-box-height}, 2));
+
+  width: #{$border-box-width};
+  height: #{$border-box-height};
+  background: transparent;
+  border: 2px solid #{$bg-color};
+}
+
 .town-container {
   position: absolute;
   bottom: 0;
