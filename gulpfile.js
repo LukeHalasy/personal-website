@@ -10,7 +10,7 @@ const sass = gulpSass(dartSass);
 
 function watch() {
     browserSync.init({
-      startPath: '/newfoundland.html',
+      startPath: '/index.html',
       server: {
         baseDir: 'app',
       },
