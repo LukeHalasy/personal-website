@@ -4,7 +4,7 @@ html, body, .vsc-initialized {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #e2e2e2;
+  background: #000000;
 }
 
 .sky-container {
@@ -25,26 +25,174 @@ html, body, .vsc-initialized {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border-radius: 0.5em;
+  border-top: 0.2em solid #d4d4d4;
+  border-bottom: 0.2em solid #d4d4d4;
+  border-left: 0.2em solid #d4d4d4;
+  border-right: 0.2em solid #d4d4d4;
 }
 
 .sky-container .main-content .text-container {
-  color: #e2e2e2;
+  color: #d4d4d4;
   font-family: "Roboto Mono", monospace;
   font-size: 1.15em;
   text-align: center;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
 }
 
-.sky-container .main-content::after {
+.sky-container .main-content .text-container .description-container {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sky-container .main-content .text-container .description-container div {
+  text-align: center;
+}
+
+.sky-container .main-content .text-container hr {
+  align-content: center;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sky-container .main-content .text-container .link-container {
+  width: 100%;
+  height: calc(35% - 4px);
+}
+
+.sky-container .main-content .text-container .link-container::before {
   content: "";
   position: absolute;
-  left: calc(50% - 97%/2);
-  top: calc(50% - 93%/2);
-  width: 97%;
-  height: 93%;
-  background: transparent;
-  border: 2px solid #e2e2e2;
+  display: block;
+  width: calc(100% + 6px);
+  height: 0.15em;
+  border: 2px solid black;
+  bottom: -0.2em;
+  left: -4px;
+  background-color: #289ddb;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
 }
 
+.sky-container .main-content .text-container .link-container:hover::before {
+  transform: scaleX(1);
+}
+
+.sky-container .main-content .text-container .link-container a {
+  color: #d4d4d4;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.sky-container .main-content .text-container .link-container a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: calc(50% + 6px);
+  height: 0.15em;
+  border: 2px solid black;
+  bottom: -2px;
+  left: calc(25% - 4px);
+  background-color: #000000;
+  transform: scaleX(0);
+  transition: transform 0.35s ease-out;
+}
+
+.sky-container .main-content .text-container .link-container a:hover::before {
+  transform: scaleX(1);
+  transition: transform 0.35s linear;
+}
+
+/*
+.sky-container .main-content .text-container .link-container a::after {
+  content: "Link";
+  position: absolute;
+  display: block;
+  width: calc(50% + 6px);
+  height: 0.15em;
+  border: 2px solid black;
+  bottom: -2px;
+  left: calc(25% - 4px);
+  background-color: #000000;
+  transition: transform 0.25s linear;
+}
+*/
+/*
+.sky-container .main-content .text-container .link-container a::after {
+  content: "Test";
+  position: absolute;
+  display: block;
+  width: calc(50% + 6px);
+  height: 0.15em;
+  border: 2px solid black;
+  bottom: -2px;
+  left: calc(25% - 4px);
+  background-color: #000000;
+  transform: scaleX(0);
+  transition: transform 0.2s linear;
+}
+
+.sky-container .main-content .text-container .link-container a:hover::after {
+  transform: scaleX(1);
+}
+*/
+/*
+.sky-container .main-content .text-container .link-container a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: calc(100% + 6px);
+  height: 0.15em;
+  border: 2px solid black;
+  bottom: -2px;
+  left: -4px;
+  background-color: #289ddb;
+  transform: scaleX(0);
+  transition: transform 0.15s ease;
+}
+
+.sky-container .main-content .text-container .link-container a:hover::after {
+  transform: scaleX(0.25);
+}
+*/
+/*
+.sky-container .main-content .text-container .link-container a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 0.5em;
+  bottom: 0px;
+  left: 0px;
+  background-color: #007DB9;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.sky-container .main-content .text-container .link-container a:hover::before {
+  transform: scaleX(1);
+}
+*/
+/*
+.sky-container .main-content::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - math.div(97%, 2));
+  top: calc(50% - math.div(95%, 2));
+
+  width: 97%;
+  height: 95%;
+  background: transparent;
+  border: 2px solid #d4d4d4;
+}
+*/
 .town-container {
   position: absolute;
   bottom: 0;
@@ -70,79 +218,104 @@ html, body, .vsc-initialized {
 }
 
 .houses-container > img:nth-child(1) {
-  width: 6.0796327651%;
+  width: 5.052805531%;
 }
 
 .houses-container > img:nth-child(2) {
-  width: 5.8873835352%;
+  width: 4.0507309685%;
 }
 
 .houses-container > img:nth-child(3) {
-  width: 5.0065492914%;
+  width: 5.3072618747%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(4) {
-  width: 5.5865630088%;
+  width: 4.4465223671%;
 }
 
 .houses-container > img:nth-child(5) {
-  width: 6.3162887537%;
+  width: 4.7494114446%;
 }
 
 .houses-container > img:nth-child(6) {
-  width: 5.2364780621%;
+  width: 5.1694240967%;
 }
 
 .houses-container > img:nth-child(7) {
-  width: 6.4654656274%;
+  width: 5.2761229601%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(8) {
-  width: 6.1459041669%;
+  width: 4.9880141032%;
 }
 
 .houses-container > img:nth-child(9) {
-  width: 5.543017128%;
+  width: 4.7372028411%;
 }
 
 .houses-container > img:nth-child(10) {
-  width: 5.0809724612%;
+  width: 4.8607665482%;
 }
 
 .houses-container > img:nth-child(11) {
-  width: 5.4111136028%;
+  width: 4.2449125375%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(12) {
-  width: 6.0272355435%;
+  width: 5.4460880208%;
 }
 
 .houses-container > img:nth-child(13) {
-  width: 5.5884492446%;
+  width: 5.3172133566%;
 }
 
 .houses-container > img:nth-child(14) {
-  width: 5.3204901468%;
+  width: 4.5164800891%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(15) {
-  width: 5.8722356236%;
+  width: 4.8312570356%;
 }
 
 .houses-container > img:nth-child(16) {
-  width: 5.2691559822%;
+  width: 4.1495932299%;
 }
 
 .houses-container > img:nth-child(17) {
-  width: 5.8912230496%;
+  width: 5.3282232154%;
 }
 
 .houses-container > img:nth-child(18) {
-  width: 5.1261563868%;
+  width: 4.2434840745%;
 }
 
 .houses-container > img:nth-child(19) {
-  width: 5.9475997984%;
+  width: 4.2239060749%;
+}
+
+.houses-container > img:nth-child(20) {
+  width: 4.1156369457%;
+}
+
+.houses-container > img:nth-child(21) {
+  width: 4.6938513721%;
+}
+
+.houses-container > img:nth-child(22) {
+  width: 4.5189026892%;
+}
+
+.houses-container > img:nth-child(23) {
+  width: 5.1625034239%;
+}
+
+.houses-container > img:nth-child(24) {
+  width: 4.4623903521%;
+  transform: scaleX(-1);
 }
 
 .houses-container img {
@@ -150,20 +323,12 @@ html, body, .vsc-initialized {
   padding: 0px;
 }
 
-.sky-container .snow {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #acacac;
-}
-
 .wave-container {
   position: absolute;
   width: 100%;
   height: 30%;
   bottom: 0px;
-  background: #e2e2e2;
+  background: #d4d4d4;
   border: 0px;
 }
 
@@ -189,19 +354,19 @@ html, body, .vsc-initialized {
     right: -8%;
   }
   20% {
-    transform: translateY(7%);
+    transform: translateY(-25%);
   }
   40% {
     transform: translateY(0%);
   }
   60% {
-    transform: translateY(7%);
+    transform: translateY(-25%);
   }
   80% {
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translateY(-25%);
     right: 100%;
   }
 }
@@ -211,19 +376,19 @@ html, body, .vsc-initialized {
     right: -8%;
   }
   20% {
-    transform: translateY(7%);
+    transform: translateY(-25%);
   }
   40% {
     transform: translateY(0%);
   }
   60% {
-    transform: translateY(7%);
+    transform: translateY(-25%);
   }
   80% {
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translateY(-25%);
     right: 100%;
   }
 }
@@ -231,12 +396,13 @@ html, body, .vsc-initialized {
   content: "";
   position: absolute;
   width: 100%;
-  height: 80%;
+  height: 83%;
   bottom: 0;
   left: 0;
   border: 0px;
+  background: black;
   background-image: url("../images/wave.svg");
-  background-size: 60% 100%;
+  background-repeat: repeat-x;
   -webkit-animation: move-wave 5s alternate ease-in-out infinite;
   animation: move-wave 5s alternate ease-in-out infinite;
 }
@@ -245,8 +411,8 @@ html, body, .vsc-initialized {
   position: absolute;
   top: -10%;
   right: -8%;
-  width: 7%;
+  width: 8%;
   z-index: 1;
-  -webkit-animation: move-boat 35s linear infinite;
-  animation: move-boat 35s linear infinite;
+  -webkit-animation: move-boat 45s linear infinite;
+  animation: move-boat 45s linear infinite;
 }
