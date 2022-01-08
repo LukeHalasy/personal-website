@@ -1,20 +1,6 @@
 @use "sass:math";
 
-@mixin keyframes-animation($name) {
-  @-webkit-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  }
-};
 
-@mixin prefix-property($name, $value) {
-  -webkit-#{$name}: $value;
-          #{$name}: $value;
-};
-
-// $bg-color: #30395C;
 $bg-color: #d4d4d4;
 $wave-color: #289ddb;
 
@@ -35,8 +21,10 @@ html, body, .vsc-initialized {
 
 }
 
-$main-content-width: 49%;
-$main-content-height: 84%;
+// $main-content-width: 49%;
+$main-content-width: 85%;
+// $main-content-height: 84%;
+$main-content-height: 94%;
 
 .sky-container .main-content {
   position: relative;
@@ -50,18 +38,17 @@ $main-content-height: 84%;
   justify-content: center;
   align-items: center;
   border-radius: 0.5em;
-  /*
-  border-top: .2em solid #{$bg-color};
-  border-bottom: .2em solid #{$bg-color};
-  border-left: .2em solid #{$bg-color};
-  border-right: .2em solid #{$bg-color}
-  */
+}
+
+.sky-cotainer .main-content .extra-break {
+  display: inline;
 }
 
 .sky-container .main-content .text-container {
   color: #{$bg-color};
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.15em;
+  // font-size: 1.15em;
+  font-size: 0.95em;
   text-align: center;
   z-index: 1;
   height: 100%;
@@ -73,7 +60,8 @@ $main-content-height: 84%;
   height: 65%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  // justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
@@ -83,165 +71,65 @@ $main-content-height: 84%;
 }
 
 
-
-.sky-container .main-content .text-container hr {
-  align-content : center;
-  width : 65%;
-  margin-left : auto;
-  margin-right : auto;
-}
 .sky-container .main-content .text-container .description-container div hr {
   align-content : center;
   width : 85%;
   margin-left : auto;
   margin-right : auto;
 }
+
+
+.sky-container .main-content .text-container .description-container .name {
+}
+
+
 .sky-container .main-content .text-container .link-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   height: calc(35% - 4px);
 }
 
+.sky-container .main-content .text-container .link-container hr {
+  align-content : center;
+  width : 85%;
+  margin-left : auto;
+  margin-right : auto;
 
-/*
-.sky-container .main-content .text-container .link-container::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: calc(100% + 6px);
-  height: 0.15em;
-  border: 2px solid black;
-  bottom: -.2em;
-  left: -4px;
-  background-color: #{$wave-color};
-  transform: scaleX(0);
-  transition: transform 0.3s ease-out;
 }
 
-.sky-container .main-content .text-container .link-container:hover::before {
-  transform: scaleX(1);
+.sky-container .main-content .text-container .link-container div {
+  width: 100%;
 }
-*/
-
 
 .sky-container .main-content .text-container .link-container a {
+  // new
+  font-size: 0.9em;
   color: #{$bg-color};
   text-decoration: none;
   display: inline-block;
 }
 
+.sky-container .main-content .text-container .link-container .link-sep-non-mobile {
+  // new
+  display: none;
+}
+
+.sky-container .main-content .text-container .link-container span .link-sep {
+  align-content : center;
+  width : 45%;
+  margin-left : auto;
+  margin-right : auto;
+  // display: inline;
+}
 .sky-container .main-content .text-container .link-container a:hover {
   text-decoration: underline;
 }
-/*
-.sky-container .main-content .text-container .link-container a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: calc(50% + 6px);
-  height: 0.15em;
-  border: 2px solid black;
-  bottom: -2px;
-  left: calc(25% - 4px);
-  background-color: #000000;
-  transform: scaleX(0);
-  transition: transform 0.35s ease-out;
-}
-
-.sky-container .main-content .text-container .link-container a:hover::before {
-  transform: scaleX(1);
-  transition: transform 0.35s linear;
-}
-
-/*
-.sky-container .main-content .text-container .link-container a::after {
-  content: "Link";
-  position: absolute;
-  display: block;
-  width: calc(50% + 6px);
-  height: 0.15em;
-  border: 2px solid black;
-  bottom: -2px;
-  left: calc(25% - 4px);
-  background-color: #000000;
-  transition: transform 0.25s linear;
-}
-*/
-
-/*
-.sky-container .main-content .text-container .link-container a::after {
-  content: "Test";
-  position: absolute;
-  display: block;
-  width: calc(50% + 6px);
-  height: 0.15em;
-  border: 2px solid black;
-  bottom: -2px;
-  left: calc(25% - 4px);
-  background-color: #000000;
-  transform: scaleX(0);
-  transition: transform 0.2s linear;
-}
-
-.sky-container .main-content .text-container .link-container a:hover::after {
-  transform: scaleX(1);
-}
-*/
-/*
-.sky-container .main-content .text-container .link-container a::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: calc(100% + 6px);
-  height: 0.15em;
-  border: 2px solid black;
-  bottom: -2px;
-  left: -4px;
-  background-color: #{$wave-color};
-  transform: scaleX(0);
-  transition: transform 0.15s ease;
-}
-
-.sky-container .main-content .text-container .link-container a:hover::after {
-  transform: scaleX(0.25);
-}
-*/
-
-/*
-.sky-container .main-content .text-container .link-container a::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 0.5em;
-  bottom: 0px;
-  left: 0px;
-  background-color: #007DB9;
-  transform: scaleX(0);
-  transition: transform 0.25s ease;
-}
-
-.sky-container .main-content .text-container .link-container a:hover::before {
-  transform: scaleX(1);
-}
-*/
-
 
 $border-box-width: 97%;
 $border-box-height: 95%;
-
-/*
-.sky-container .main-content::after {
-  content: '';
-  position: absolute;
-  left: calc(50% - math.div(#{$border-box-width}, 2));
-  top: calc(50% - math.div(#{$border-box-height}, 2));
-
-  width: #{$border-box-width};
-  height: #{$border-box-height};
-  background: transparent;
-  border: 2px solid #{$bg-color};
-}
-*/
 
 .town-container {
   position: absolute;
@@ -268,7 +156,8 @@ $border-box-height: 95%;
 }
 
 // make sure this matches up with the html
-$max-homes: 25;
+// $max-homes: 25;
+$max-homes: 8;
 $home-heights: ();
 $home-widths: ();
 
@@ -282,7 +171,10 @@ $precision: 0.01;
 
 @for $i from 1 to $max-homes {
   .houses-container>img:nth-child(#{$i}) {
-    width: #{nth($home-widths, $i) * 100%};
+    // width: #{nth($home-widths, $i) * 100%};
+    width: #{nth($home-widths, $i) * 500px};
+    display: inline;
+
     // random wether the image is flipped or not
     @if (random(3) > 2) {
       transform: scaleX(-1);
@@ -293,6 +185,7 @@ $precision: 0.01;
 .houses-container img {
   max-height: 100%;
   padding: 0px;
+  display: hidden;
 }
 
 .wave-container {
@@ -304,38 +197,56 @@ $precision: 0.01;
   border: 0px;
 }
 
-@include keyframes-animation(move-wave) {
-  from {
-    transform: scaleX(1) translateY(0%);    
+@mixin keyframes-animation($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+};
 
-  } to {
+@mixin prefix-property($name, $value) {
+  -webkit-#{$name}: $value;
+          #{$name}: $value;
+};
+
+@include keyframes-animation(move-wave) {
+  0% {
+    transform: scaleX(1) translateY(0%);    
+  } 100% {
     transform: scaleX(1.05) translateY(7%);
   }
 }
 
+$boat-width: 14%;
 $boat-animation-altitude: 25%;
+$test: (($boat-width * -1) * (100% / $boat-width)) + (-1 * (100% * (100% / $boat-width)));
 @include keyframes-animation(move-boat) {
   0% {
-    transform: translateY(0%);    
-    right: -8%;
-  } 20% {
-    transform: translateY(-#{$boat-animation-altitude});    
-  } 40% {
-    transform: translateY(0%);    
-  } 60% {
-    transform: translateY(-#{$boat-animation-altitude});    
-  } 80% {
-    transform: translateY(0%);    
-  } 100% {
-    transform: translateY(-#{$boat-animation-altitude});    
-    // transform: translateX(-100%) translateY(7%);
-    right: 100%;
+    transform: translateX(0);    
+  } 100%{
+    transform: translateX(#{$test});    
   }
 }
 
+@include keyframes-animation(move-boat-vertically) {
+  0% {
+    transform: translateY(-15%);    
+  } 25% {
+    transform: translateY(15%);
+  } 50% {
+    transform: translateY(-15%);
+  } 75% {
+    transform: translateY(15%);    
+  } 100% {
+    transform: translateY(-15%);    
+  }
+}
 
 $wave-duration: 5s;
-$boat-duration: 45s;
+$boat-vertical-duration: $wave-duration * 4;
+$boat-horizontal-duration: 30s;
 
 .wave-container::after {
   content: '';
@@ -347,18 +258,34 @@ $boat-duration: 45s;
   border: 0px;
   background: black;
   background-image: url("../images/wave.svg");
+  background-position: top;
+  background-size: 120% 100%; 
   background-repeat: repeat-x;
-  @include prefix-property(animation, move-wave #{$wave-duration} alternate ease-in-out infinite);
+  @include prefix-property(animation, move-wave #{$wave-duration} alternate cubic-bezier(.25,.56,.73,.41) infinite);
 }
 
 .wave-container .boat {
   position: absolute;
-  top: -10%;
-  right: -8%;
-  width: 8%;
+  height: 82%;
+  width: 100%;
   z-index: 1;
-  @include prefix-property(animation, move-boat #{$boat-duration} linear infinite);
+
+  @include prefix-property(animation, move-boat-vertically #{$boat-vertical-duration} cubic-bezier(.29,.06,.7,.93) infinite);
 }
 
+.wave-container .boat::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  top: -10%;
+  right: -#{$boat-width};
+  width: #{$boat-width};
+  z-index: 1;
+
+  background-image: url("../images/boat.svg");
+  background-position: top;
+  background-size: 100% 100%; 
+  @include prefix-property(animation, move-boat #{$boat-horizontal-duration} linear infinite);
+}
 
 
