@@ -131,133 +131,193 @@ html, body, .vsc-initialized {
 
 .houses-container > img:nth-child(1) {
   display: inline;
-  height: 55%;
+  height: 36%;
 }
 
 .houses-container > img:nth-child(2) {
   display: inline;
-  height: 46%;
+  height: 48%;
 }
 
 .houses-container > img:nth-child(3) {
   display: inline;
-  height: 42%;
+  height: 41%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(4) {
   display: inline;
-  height: 42%;
+  height: 39%;
 }
 
 .houses-container > img:nth-child(5) {
   display: inline;
-  height: 48%;
+  height: 42%;
 }
 
 .houses-container > img:nth-child(6) {
   display: inline;
-  height: 49%;
+  height: 36%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(7) {
   display: inline;
-  height: 51%;
+  height: 42%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(8) {
   display: inline;
-  height: 41%;
-  transform: scaleX(-1);
+  height: 43%;
 }
 
 .houses-container > img:nth-child(9) {
   display: inline;
-  height: 50%;
+  height: 38%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(10) {
   display: inline;
-  height: 49%;
+  height: 47%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(11) {
   display: inline;
-  height: 43%;
-  transform: scaleX(-1);
+  height: 34%;
 }
 
 .houses-container > img:nth-child(12) {
   display: inline;
-  height: 53%;
-  transform: scaleX(-1);
+  height: 47%;
 }
 
 .houses-container > img:nth-child(13) {
   display: inline;
-  height: 42%;
+  height: 45%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(14) {
   display: inline;
-  height: 54%;
+  height: 45%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(15) {
   display: inline;
-  height: 49%;
+  height: 42%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(16) {
   display: inline;
-  height: 50%;
+  height: 45%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(17) {
   display: inline;
-  height: 42%;
+  height: 37%;
 }
 
 .houses-container > img:nth-child(18) {
-  display: inline;
-  height: 49%;
-  transform: scaleX(-1);
-}
-
-.houses-container > img:nth-child(19) {
-  display: inline;
-  height: 49%;
-  transform: scaleX(-1);
-}
-
-.houses-container > img:nth-child(20) {
   display: inline;
   height: 47%;
   transform: scaleX(-1);
 }
 
+.houses-container > img:nth-child(19) {
+  display: inline;
+  height: 38%;
+}
+
+.houses-container > img:nth-child(20) {
+  display: inline;
+  height: 34%;
+}
+
 .houses-container > img:nth-child(21) {
   display: inline;
-  height: 51%;
+  height: 43%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(22) {
   display: inline;
-  height: 41%;
-  transform: scaleX(-1);
+  height: 37%;
 }
 
 .houses-container > img:nth-child(23) {
   display: inline;
-  height: 55%;
+  height: 36%;
 }
 
 .houses-container > img:nth-child(24) {
   display: inline;
-  height: 42%;
+  height: 46%;
+}
+
+.houses-container > img:nth-child(25) {
+  display: inline;
+  height: 35%;
+}
+
+.houses-container > img:nth-child(26) {
+  display: inline;
+  height: 40%;
+}
+
+.houses-container > img:nth-child(27) {
+  display: inline;
+  height: 40%;
+}
+
+.houses-container > img:nth-child(28) {
+  display: inline;
+  height: 39%;
+}
+
+.houses-container > img:nth-child(29) {
+  display: inline;
+  height: 47%;
+}
+
+.houses-container > img:nth-child(30) {
+  display: inline;
+  height: 46%;
+}
+
+.houses-container > img:nth-child(31) {
+  display: inline;
+  height: 46%;
+}
+
+.houses-container > img:nth-child(32) {
+  display: inline;
+  height: 39%;
+}
+
+.houses-container > img:nth-child(33) {
+  display: inline;
+  height: 45%;
+}
+
+.houses-container > img:nth-child(34) {
+  display: inline;
+  height: 34%;
+}
+
+.houses-container > img:nth-child(35) {
+  display: inline;
+  height: 39%;
+}
+
+.houses-container > img:nth-child(36) {
+  display: inline;
+  height: 39%;
 }
 
 .houses-container > img:nth-child(1) {
@@ -325,7 +385,7 @@ html, body, .vsc-initialized {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-814.2857142857%);
+    transform: translateX(-688.2352941176%);
   }
 }
 @keyframes move-boat {
@@ -333,7 +393,7 @@ html, body, .vsc-initialized {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-814.2857142857%);
+    transform: translateX(-688.2352941176%);
   }
 }
 @-webkit-keyframes move-boat-vertically {
@@ -401,8 +461,8 @@ html, body, .vsc-initialized {
   position: absolute;
   height: 100%;
   top: -10%;
-  right: -14%;
-  width: 14%;
+  right: -17%;
+  width: 17%;
   z-index: 1;
   background-image: url("../images/boat.svg");
   background-position: top;
@@ -420,7 +480,7 @@ html, body, .vsc-initialized {
     display: inline;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) {
   .houses-container > img:nth-child(10) {
     display: inline;
   }
@@ -431,6 +491,69 @@ html, body, .vsc-initialized {
 
   .houses-container > img:nth-child(12) {
     display: inline;
+  }
+
+  .sky-container .main-content {
+    left: calc(50% - 49%/2);
+    top: calc(50% - 84%/2.5);
+    width: 49%;
+    height: 84%;
+  }
+
+  .sky-container .main-content .text-container {
+    font-size: 1.15em;
+  }
+
+  .sky-container .main-content .text-container .description-container {
+    justify-content: flex-end;
+  }
+
+  .sky-container .main-content .text-container .description-container div hr {
+    width: 100%;
+  }
+
+  .sky-container .main-content .text-container .link-container span .link-sep {
+    display: none;
+  }
+
+  .sky-container .main-content .extra-break {
+    display: none;
+  }
+
+  .sky-container .main-content .text-container .link-container span .link-sep-non-mobile {
+    display: inline;
+  }
+
+  .wave-container::after {
+    background-size: 100% 100%;
+  }
+
+  @-webkit-keyframes move-boat {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1350%);
+    }
+  }
+  @keyframes move-boat {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1350%);
+    }
+  }
+  .wave-container .boat {
+    height: 100%;
+  }
+
+  .wave-container .boat::after {
+    right: -8%;
+    width: 8%;
+    z-index: 1;
+    -webkit-animation: move-boat 30s linear infinite;
+    animation: move-boat 30s linear infinite;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -482,62 +605,64 @@ html, body, .vsc-initialized {
     display: inline;
   }
 
-  .sky-container .main-content {
-    left: calc(50% - 49%/2);
-    top: calc(50% - 84%/2.5);
-    width: 49%;
-    height: 84%;
-  }
-
-  .sky-container .main-content .text-container {
-    font-size: 1.15em;
-  }
-
-  .sky-container .main-content .text-container .description-container {
-    justify-content: flex-end;
-  }
-
-  .sky-container .main-content .text-container .description-container div hr {
-    width: 100%;
-  }
-
-  .sky-container .main-content .text-container .link-container span .link-sep {
-    display: none;
-  }
-
-  .sky-container .main-content .extra-break {
-    display: none;
-  }
-
-  .sky-container .main-content .text-container .link-container span .link-sep-non-mobile {
+  .houses-container > img:nth-child(25) {
     display: inline;
   }
 
-  .wave-container::after {
-    background-size: 100% 100%;
+  .houses-container > img:nth-child(26) {
+    display: inline;
   }
 
-  @-webkit-keyframes move-boat {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-1528.5714285714%);
-    }
+  .houses-container > img:nth-child(27) {
+    display: inline;
   }
-  @keyframes move-boat {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-1528.5714285714%);
-    }
+
+  .houses-container > img:nth-child(28) {
+    display: inline;
   }
-  .wave-container .boat::after {
-    right: -7%;
-    width: 7%;
-    z-index: 1;
-    -webkit-animation: move-boat 30s linear infinite;
-    animation: move-boat 30s linear infinite;
+
+  .houses-container > img:nth-child(29) {
+    display: inline;
+  }
+
+  .houses-container > img:nth-child(30) {
+    display: inline;
+  }
+
+  .houses-container > img:nth-child(31) {
+    display: inline;
+  }
+
+  .houses-container > img:nth-child(32) {
+    display: inline;
+  }
+
+  .houses-container > img:nth-child(33) {
+    display: inline;
+  }
+
+  .houses-container > img:nth-child(34) {
+    display: inline;
+  }
+
+  .houses-container > img:nth-child(35) {
+    display: inline;
+  }
+
+  .houses-container > img:nth-child(36) {
+    display: inline;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .sky-container .main-content .text-container {
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width: 2300px) {
+  .sky-container .main-content .text-container {
+    font-size: 2.5em;
+  }
+} .sky-container .main-content .text-container {
+    font-size: 2.5em;
   }
 }

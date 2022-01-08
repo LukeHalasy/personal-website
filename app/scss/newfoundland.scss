@@ -148,7 +148,7 @@ $border-box-height: 95%;
 // make sure this matches up with the html
 // $max-homes: 25;
 $homes-mobile: 8;
-$max-homes: 25;
+$max-homes: 37;
 
 $precision: 0.01;
 
@@ -158,7 +158,7 @@ $precision: 0.01;
     // width: #{nth($home-widths, $i) * $max-screen-width};
 
     display: inline;
-    height: #{math.div(40 + random(15), 100) * 100%};
+    height: #{math.div(33 + random(15), 100) * 100%};
 
     // random wether the image is flipped or not
     @if (random(3) > 2) {
@@ -213,7 +213,7 @@ $precision: 0.01;
   }
 }
 
-$boat-width: 14%;
+$boat-width: 17%;
 $horizontal-distance: (($boat-width * -1) * (100% / $boat-width)) + (-1 * (100% * (100% / $boat-width)));
 @include keyframes-animation(move-boat) {
   0% {
@@ -292,25 +292,17 @@ $homes-mid-mobile: 10;
   }
 }
 
+
 $homes-tablet: 13;
-
-@media only screen and (min-width: 768px) and (max-width: 991px){ 
-  @for $i from $homes-mid-mobile to $homes-tablet {
-    .houses-container>img:nth-child(#{$i}) {
-      display: inline;
-    }
-  }
-}
-
 $main-content-width: 49%;
 $main-content-height: 84%;
 
-$boat-width: 7%;
+$boat-width: 8%;
 $horizontal-distance: (($boat-width * -1) * (100% / $boat-width)) + (-1 * (100% * (100% / $boat-width)));
 $boat-horizontal-duration: 30s;
 
-@media only screen and (min-width: 992px) {
-  @for $i from $homes-tablet to $max-homes {
+@media only screen and (min-width: 768px) { 
+  @for $i from $homes-mid-mobile to $homes-tablet {
     .houses-container>img:nth-child(#{$i}) {
       display: inline;
     }
@@ -352,6 +344,7 @@ $boat-horizontal-duration: 30s;
   .wave-container::after {
     background-size: 100% 100%;
   }
+
   @include keyframes-animation(move-boat) {
     0% {
       transform: translateX(0);    
@@ -359,6 +352,10 @@ $boat-horizontal-duration: 30s;
       transform: translateX(#{$horizontal-distance});    
     }
   } 
+
+  .wave-container .boat {
+    height: 100%;
+  }
 
   .wave-container .boat::after {
     right: -#{$boat-width};
@@ -370,4 +367,23 @@ $boat-horizontal-duration: 30s;
 }
 
 
+@media only screen and (min-width: 992px) {
+  @for $i from $homes-tablet to $max-homes {
+    .houses-container>img:nth-child(#{$i}) {
+      display: inline;
+    }
+  }
+}
 
+
+@media only screen and (min-width: 1500px) {
+  .sky-container .main-content .text-container {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width: 2300px) {
+  .sky-container .main-content .text-container {
+    font-size: 2.5em;
+  }
+}
