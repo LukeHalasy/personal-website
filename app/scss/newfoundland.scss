@@ -78,11 +78,6 @@ $main-content-height: 94%;
   margin-right : auto;
 }
 
-
-.sky-container .main-content .text-container .description-container .name {
-}
-
-
 .sky-container .main-content .text-container .link-container {
   display: flex;
   flex-direction: column;
@@ -157,28 +152,54 @@ $border-box-height: 95%;
 
 // make sure this matches up with the html
 // $max-homes: 25;
-$max-homes: 8;
-$home-heights: ();
-$home-widths: ();
+$max-homes-mobile: 10;
+$max-homes-tablet: 14;
+$home-heights-mobile: ();
+$home-heights-tablet: ();
+$home-widths-mobile: ();
+$home-widths-tablet: ();
 
-$percentage-per-house: math.div(1, $max-homes);
 $precision: 0.01;
 
-@for $i from 1 to $max-homes {
-  $home-heights: append($home-heights, math.div(85 + random(15), 100));
-  $home-widths: append($home-widths, ($percentage-per-house + math.div((math.random() * 1.5), 100)));
+@for $i from 1 to $max-homes-mobile {
+  $percentage-per-house: math.div(1, $max-homes-mobile);
+  $home-heights-mobile: append($home-heights-mobile, math.div(85 + random(15), 100));
+  $home-widths-mobile: append($home-widths-mobile, ($percentage-per-house + math.div((math.random() * 1.5), 100)));
 }
 
-@for $i from 1 to $max-homes {
-  .houses-container>img:nth-child(#{$i}) {
-    // width: #{nth($home-widths, $i) * 100%};
-    width: #{nth($home-widths, $i) * 500px};
-    display: inline;
+@for $i from 1 to $max-homes-tablet {
+  $percentage-per-house: math.div(1, $max-homes-tablet);
+  $home-heights-tablet: append($home-heights-tablet, math.div(85 + random(15), 100));
+  $home-widths-tablet: append($home-widths-tablet, ($percentage-per-house + math.div((math.random() * 1.5), 100)));
+}
 
-    // random wether the image is flipped or not
-    @if (random(3) > 2) {
-      transform: scaleX(-1);
-    } 
+@for $i from 1 to $max-homes-mobile {
+  @media (max-device-width: 500px) {
+    .houses-container>img:nth-child(#{$i}) {
+      // width: #{nth($home-widths, $i) * 100%};
+      width: #{nth($home-widths-mobile, $i) * 500px};
+      display: inline;
+
+      // random wether the image is flipped or not
+      @if (random(3) > 2) {
+        transform: scaleX(-1);
+      } 
+    }
+  }
+}
+
+@for $i from 1 to $max-homes-tablet {
+  @media (min-device-width: 500px) and (max-device-width: 768px) {
+    .houses-container>img:nth-child(#{$i}) {
+      // width: #{nth($home-widths, $i) * 100%};
+      width: #{nth($home-widths-tablet, $i) * 768px};
+      display: inline;
+
+      // random wether the image is flipped or not
+      @if (random(3) > 2) {
+        transform: scaleX(-1);
+      } 
+    }
   }
 }
 

@@ -129,43 +129,148 @@ html, body, .vsc-initialized {
   overflow: hidden;
 }
 
-.houses-container > img:nth-child(1) {
-  width: 62.8046813415px;
-  display: inline;
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(1) {
+    width: 57.0800853034px;
+    display: inline;
+    transform: scaleX(-1);
+  }
 }
-
-.houses-container > img:nth-child(2) {
-  width: 69.2281933324px;
-  display: inline;
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(2) {
+    width: 51.2509511123px;
+    display: inline;
+    transform: scaleX(-1);
+  }
 }
-
-.houses-container > img:nth-child(3) {
-  width: 62.7212022703px;
-  display: inline;
-  transform: scaleX(-1);
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(3) {
+    width: 52.7731992873px;
+    display: inline;
+  }
 }
-
-.houses-container > img:nth-child(4) {
-  width: 63.4711358525px;
-  display: inline;
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(4) {
+    width: 54.6087057684px;
+    display: inline;
+    transform: scaleX(-1);
+  }
 }
-
-.houses-container > img:nth-child(5) {
-  width: 67.8767372267px;
-  display: inline;
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(5) {
+    width: 51.5243644892px;
+    display: inline;
+  }
 }
-
-.houses-container > img:nth-child(6) {
-  width: 65.4680228045px;
-  display: inline;
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(6) {
+    width: 54.179714227px;
+    display: inline;
+  }
 }
-
-.houses-container > img:nth-child(7) {
-  width: 64.0005730274px;
-  display: inline;
-  transform: scaleX(-1);
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(7) {
+    width: 54.2635839425px;
+    display: inline;
+    transform: scaleX(-1);
+  }
 }
-
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(8) {
+    width: 55.3924501873px;
+    display: inline;
+    transform: scaleX(-1);
+  }
+}
+@media (max-device-width: 500px) {
+  .houses-container > img:nth-child(9) {
+    width: 50.3071959548px;
+    display: inline;
+    transform: scaleX(-1);
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(1) {
+    width: 58.7326324267px;
+    display: inline;
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(2) {
+    width: 54.9273476632px;
+    display: inline;
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(3) {
+    width: 66.0182997222px;
+    display: inline;
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(4) {
+    width: 63.7410926324px;
+    display: inline;
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(5) {
+    width: 66.1981908398px;
+    display: inline;
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(6) {
+    width: 58.0041177163px;
+    display: inline;
+    transform: scaleX(-1);
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(7) {
+    width: 62.2039801135px;
+    display: inline;
+    transform: scaleX(-1);
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(8) {
+    width: 62.0521586828px;
+    display: inline;
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(9) {
+    width: 55.8416207302px;
+    display: inline;
+    transform: scaleX(-1);
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(10) {
+    width: 58.5511297643px;
+    display: inline;
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(11) {
+    width: 62.6268793922px;
+    display: inline;
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(12) {
+    width: 56.2218140111px;
+    display: inline;
+    transform: scaleX(-1);
+  }
+}
+@media (min-device-width: 500px) and (max-device-width: 768px) {
+  .houses-container > img:nth-child(13) {
+    width: 57.7883308704px;
+    display: inline;
+  }
+}
 .houses-container img {
   max-height: 100%;
   padding: 0px;
