@@ -50,10 +50,12 @@ $main-content-height: 84%;
   justify-content: center;
   align-items: center;
   border-radius: 0.5em;
+  /*
   border-top: .2em solid #{$bg-color};
   border-bottom: .2em solid #{$bg-color};
   border-left: .2em solid #{$bg-color};
   border-right: .2em solid #{$bg-color}
+  */
 }
 
 .sky-container .main-content .text-container {
@@ -77,7 +79,10 @@ $main-content-height: 84%;
 
 .sky-container .main-content .text-container .description-container div {
   text-align: center;
+  width: 100%;
 }
+
+
 
 .sky-container .main-content .text-container hr {
   align-content : center;
@@ -85,13 +90,19 @@ $main-content-height: 84%;
   margin-left : auto;
   margin-right : auto;
 }
-
+.sky-container .main-content .text-container .description-container div hr {
+  align-content : center;
+  width : 85%;
+  margin-left : auto;
+  margin-right : auto;
+}
 .sky-container .main-content .text-container .link-container {
   width: 100%;
   height: calc(35% - 4px);
 }
 
 
+/*
 .sky-container .main-content .text-container .link-container::before {
   content: "";
   position: absolute;
@@ -109,6 +120,7 @@ $main-content-height: 84%;
 .sky-container .main-content .text-container .link-container:hover::before {
   transform: scaleX(1);
 }
+*/
 
 
 .sky-container .main-content .text-container .link-container a {
@@ -117,6 +129,10 @@ $main-content-height: 84%;
   display: inline-block;
 }
 
+.sky-container .main-content .text-container .link-container a:hover {
+  text-decoration: underline;
+}
+/*
 .sky-container .main-content .text-container .link-container a::before {
   content: "";
   position: absolute;
