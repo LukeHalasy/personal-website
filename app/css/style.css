@@ -131,190 +131,193 @@ html, body, .vsc-initialized {
 
 .houses-container > img:nth-child(1) {
   display: inline;
-  height: 37%;
+  height: 46%;
 }
 
 .houses-container > img:nth-child(2) {
   display: inline;
-  height: 35%;
+  height: 40%;
 }
 
 .houses-container > img:nth-child(3) {
   display: inline;
-  height: 38%;
-  transform: scaleX(-1);
+  height: 39%;
 }
 
 .houses-container > img:nth-child(4) {
   display: inline;
-  height: 46%;
-  transform: scaleX(-1);
+  height: 39%;
 }
 
 .houses-container > img:nth-child(5) {
   display: inline;
-  height: 38%;
+  height: 47%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(6) {
   display: inline;
-  height: 46%;
+  height: 35%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(7) {
   display: inline;
-  height: 45%;
+  height: 46%;
 }
 
 .houses-container > img:nth-child(8) {
   display: inline;
-  height: 38%;
+  height: 35%;
 }
 
 .houses-container > img:nth-child(9) {
   display: inline;
-  height: 37%;
+  height: 42%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(10) {
   display: inline;
-  height: 35%;
+  height: 45%;
 }
 
 .houses-container > img:nth-child(11) {
   display: inline;
-  height: 34%;
+  height: 39%;
 }
 
 .houses-container > img:nth-child(12) {
   display: inline;
-  height: 37%;
+  height: 39%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(13) {
   display: inline;
-  height: 48%;
+  height: 39%;
 }
 
 .houses-container > img:nth-child(14) {
   display: inline;
-  height: 36%;
+  height: 42%;
 }
 
 .houses-container > img:nth-child(15) {
+  display: inline;
+  height: 34%;
+}
+
+.houses-container > img:nth-child(16) {
+  display: inline;
+  height: 45%;
+}
+
+.houses-container > img:nth-child(17) {
+  display: inline;
+  height: 46%;
+}
+
+.houses-container > img:nth-child(18) {
+  display: inline;
+  height: 43%;
+}
+
+.houses-container > img:nth-child(19) {
+  display: inline;
+  height: 39%;
+  transform: scaleX(-1);
+}
+
+.houses-container > img:nth-child(20) {
+  display: inline;
+  height: 39%;
+}
+
+.houses-container > img:nth-child(21) {
+  display: inline;
+  height: 41%;
+}
+
+.houses-container > img:nth-child(22) {
+  display: inline;
+  height: 36%;
+  transform: scaleX(-1);
+}
+
+.houses-container > img:nth-child(23) {
+  display: inline;
+  height: 47%;
+}
+
+.houses-container > img:nth-child(24) {
+  display: inline;
+  height: 38%;
+}
+
+.houses-container > img:nth-child(25) {
+  display: inline;
+  height: 47%;
+}
+
+.houses-container > img:nth-child(26) {
+  display: inline;
+  height: 41%;
+}
+
+.houses-container > img:nth-child(27) {
+  display: inline;
+  height: 42%;
+  transform: scaleX(-1);
+}
+
+.houses-container > img:nth-child(28) {
+  display: inline;
+  height: 47%;
+  transform: scaleX(-1);
+}
+
+.houses-container > img:nth-child(29) {
   display: inline;
   height: 37%;
   transform: scaleX(-1);
 }
 
-.houses-container > img:nth-child(16) {
-  display: inline;
-  height: 46%;
-}
-
-.houses-container > img:nth-child(17) {
-  display: inline;
-  height: 34%;
-  transform: scaleX(-1);
-}
-
-.houses-container > img:nth-child(18) {
-  display: inline;
-  height: 48%;
-}
-
-.houses-container > img:nth-child(19) {
-  display: inline;
-  height: 47%;
-}
-
-.houses-container > img:nth-child(20) {
-  display: inline;
-  height: 48%;
-}
-
-.houses-container > img:nth-child(21) {
-  display: inline;
-  height: 47%;
-}
-
-.houses-container > img:nth-child(22) {
-  display: inline;
-  height: 46%;
-}
-
-.houses-container > img:nth-child(23) {
-  display: inline;
-  height: 48%;
-}
-
-.houses-container > img:nth-child(24) {
-  display: inline;
-  height: 39%;
-}
-
-.houses-container > img:nth-child(25) {
-  display: inline;
-  height: 48%;
-}
-
-.houses-container > img:nth-child(26) {
-  display: inline;
-  height: 36%;
-  transform: scaleX(-1);
-}
-
-.houses-container > img:nth-child(27) {
-  display: inline;
-  height: 35%;
-}
-
-.houses-container > img:nth-child(28) {
-  display: inline;
-  height: 35%;
-}
-
-.houses-container > img:nth-child(29) {
-  display: inline;
-  height: 44%;
-}
-
 .houses-container > img:nth-child(30) {
   display: inline;
-  height: 36%;
+  height: 43%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(31) {
   display: inline;
-  height: 38%;
+  height: 44%;
 }
 
 .houses-container > img:nth-child(32) {
   display: inline;
-  height: 36%;
-  transform: scaleX(-1);
+  height: 43%;
 }
 
 .houses-container > img:nth-child(33) {
   display: inline;
-  height: 35%;
+  height: 40%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(34) {
   display: inline;
-  height: 41%;
+  height: 36%;
 }
 
 .houses-container > img:nth-child(35) {
   display: inline;
-  height: 40%;
+  height: 35%;
 }
 
 .houses-container > img:nth-child(36) {
   display: inline;
-  height: 43%;
+  height: 37%;
 }
 
 .houses-container > img:nth-child(1) {
