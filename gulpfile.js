@@ -42,8 +42,8 @@ gulp.task('useref', function(){
 
 gulp.task('images', function(){
   return gulp.src('app/images/**/*.svg')
-  .pipe(svgmin())
-  .pipe(gulp.dest('dist/images'))
+    .pipe(svgmin())
+    .pipe(gulp.dest('dist/images'))
 });
 
 exports.style = style;
