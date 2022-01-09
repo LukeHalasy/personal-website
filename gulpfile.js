@@ -7,6 +7,7 @@ const cssnano = require('gulp-cssnano');
 const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const svgmin = require('gulp-svgmin');
+const imagemin = require('gulp-imagemin');
 
 const browserSync = require('browser-sync').create();
 
@@ -40,9 +41,15 @@ gulp.task('useref', function(){
     .pipe(gulp.dest('dist'))
 });
 
-gulp.task('images', function(){
+gulp.task('images-svg', function(){
   return gulp.src('app/images/**/*.svg')
     .pipe(svgmin())
+    .pipe(gulp.dest('dist/images'))
+});
+
+gulp.task('images-png', function(){
+  return gulp.src('app/images/**/*.png')
+    .pipe(imagemin())
     .pipe(gulp.dest('dist/images'))
 });
 
