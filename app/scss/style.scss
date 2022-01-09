@@ -1,0 +1,389 @@
+@use "sass:math";
+
+$bg-color: #d4d4d4;
+$wave-color: #289ddb;
+
+// Universal Stuff
+html, body, .vsc-initialized {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000000;
+}
+
+.sky-container {
+  position: absolute;
+  top: 0;
+  height: 55%;
+  width: 100%;
+}
+
+$main-content-width: 85%;
+$main-content-height: 94%;
+
+.sky-container .main-content {
+  position: relative;
+  left: calc(50% - math.div(#{$main-content-width}, 2));
+  top: calc(50% - math.div(#{$main-content-height}, 2.5));
+  width: #{$main-content-width};
+  height: #{$main-content-height};
+  background: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5em;
+}
+
+.sky-cotainer .main-content .extra-break {
+  display: inline;
+}
+
+.sky-container .main-content .text-container {
+  color: #{$bg-color};
+  font-family: 'Roboto Mono', monospace;
+  // font-size: 1.15em;
+  font-size: 0.95em;
+  text-align: center;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.sky-container .main-content .text-container .description-container {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sky-container .main-content .text-container .description-container div {
+  text-align: center;
+  width: 100%;
+}
+
+.sky-container .main-content .text-container .description-container div hr {
+  align-content : center;
+  width : 85%;
+  margin-left : auto;
+  margin-right : auto;
+}
+
+.sky-container .main-content .text-container .link-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: calc(35% - 4px);
+}
+
+.sky-container .main-content .text-container .link-container hr {
+  align-content : center;
+  width : 85%;
+  margin-left : auto;
+  margin-right : auto;
+
+}
+
+.sky-container .main-content .text-container .link-container div {
+  width: 100%;
+}
+
+.sky-container .main-content .text-container .link-container a {
+  // new
+  font-size: 0.9em;
+  color: #{$bg-color};
+  text-decoration: none;
+  display: inline-block;
+}
+
+.sky-container .main-content .text-container .link-container .link-sep-non-mobile {
+  // new
+  display: none;
+}
+
+.sky-container .main-content .text-container .link-container span .link-sep {
+  align-content : center;
+  width : 45%;
+  margin-left : auto;
+  margin-right : auto;
+  // display: inline;
+}
+.sky-container .main-content .text-container .link-container a:hover {
+  text-decoration: underline;
+}
+
+$border-box-width: 97%;
+$border-box-height: 95%;
+
+.town-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.houses-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 70%;
+  padding: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+// make sure this matches up with the html
+// $max-homes: 25;
+$homes-mobile: 8;
+$max-homes: 37;
+
+$precision: 0.01;
+
+@for $i from 1 to $max-homes {
+  .houses-container>img:nth-child(#{$i}) {
+    // width: #{nth($home-widths, $i) * 100%};
+    // width: #{nth($home-widths, $i) * $max-screen-width};
+
+    display: inline;
+    height: #{math.div(33 + random(15), 100) * 100%};
+
+    // random wether the image is flipped or not
+    @if (random(3) > 2) {
+      transform: scaleX(-1);
+    } 
+  }
+}
+
+@for $i from 1 to $homes-mobile {
+  .houses-container>img:nth-child(#{$i}) {
+    display: inline;
+  }
+}
+
+
+
+.houses-container img {
+  position: relative;
+  max-height: 100%;
+  padding: 0px;
+  display: hidden;
+}
+
+.wave-container {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0px;
+  background: #{$bg-color};
+  border: 0px;
+}
+
+@mixin keyframes-animation($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+};
+
+@mixin prefix-property($name, $value) {
+  -webkit-#{$name}: $value;
+          #{$name}: $value;
+};
+
+@include keyframes-animation(move-wave) {
+  0% {
+    transform: scaleX(1) translateY(0%);    
+  } 100% {
+    transform: scaleX(1.05) translateY(9%);
+  }
+}
+
+$boat-width: 17%;
+$horizontal-distance: (($boat-width * -1) * (100% / $boat-width)) + (-1 * (100% * (100% / $boat-width)));
+@include keyframes-animation(move-boat) {
+  0% {
+    transform: translateX(0);    
+  } 100%{
+    transform: translateX(#{$horizontal-distance});    
+  }
+}
+
+@include keyframes-animation(move-boat-vertically) {
+  0% {
+    transform: translateY(-15%);    
+  } 25% {
+    transform: translateY(15%);
+  } 50% {
+    transform: translateY(-15%);
+  } 75% {
+    transform: translateY(15%);    
+  } 100% {
+    transform: translateY(-15%);    
+  }
+}
+
+$wave-duration: 5s;
+$boat-vertical-duration: $wave-duration * 4;
+$boat-horizontal-duration: 15s;
+
+.wave-container::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 83%;
+  bottom: 0;
+  left: 0;
+  border: 0px;
+  background: black;
+  background-image: url("../images/wave.svg");
+  background-position: top;
+  background-size: 120% 100%; 
+  background-repeat: repeat-x;
+  @include prefix-property(animation, move-wave #{$wave-duration} alternate cubic-bezier(.25,.56,.73,.41) infinite);
+}
+
+.wave-container .boat {
+  position: absolute;
+  height: 82%;
+  width: 100%;
+  z-index: 1;
+
+  @include prefix-property(animation, move-boat-vertically #{$boat-vertical-duration} cubic-bezier(.29,.06,.7,.93) infinite);
+}
+
+.wave-container .boat::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  top: -10%;
+  right: -#{$boat-width};
+  width: #{$boat-width};
+  z-index: 1;
+
+  background-image: url("../images/boat.svg");
+  background-position: top;
+  background-size: 100% 100%; 
+  @include prefix-property(animation, move-boat #{$boat-horizontal-duration} linear infinite);
+}
+
+// 480px < size < 767px
+$homes-mid-mobile: 10;
+
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+  @for $i from $homes-mobile to $homes-mid-mobile {
+    .houses-container>img:nth-child(#{$i}) {
+      display: inline;
+    }
+  }
+}
+
+
+$homes-tablet: 13;
+$main-content-width: 49%;
+$main-content-height: 84%;
+
+$boat-width: 8%;
+$horizontal-distance: (($boat-width * -1) * (100% / $boat-width)) + (-1 * (100% * (100% / $boat-width)));
+$boat-horizontal-duration: 30s;
+
+@media only screen and (min-width: 768px) { 
+  @for $i from $homes-mid-mobile to $homes-tablet {
+    .houses-container>img:nth-child(#{$i}) {
+      display: inline;
+    }
+  }
+
+  .sky-container .main-content {
+    left: calc(50% - math.div(#{$main-content-width}, 2));
+    top: calc(50% - math.div(#{$main-content-height}, 2.5));
+    width: #{$main-content-width};
+    height: #{$main-content-height};
+  }
+
+
+  .sky-container .main-content .text-container {
+    font-size: 1.15em;
+  }
+
+  .sky-container .main-content .text-container .description-container {
+    justify-content: flex-end;
+  }
+
+  .sky-container .main-content .text-container .description-container div hr {
+    width: 100%;
+  }
+
+
+  .sky-container .main-content .text-container .link-container span .link-sep {
+    display: none;
+  }
+
+  .sky-container .main-content .extra-break {
+    display: none;
+  }
+
+  .sky-container .main-content .text-container .link-container span .link-sep-non-mobile {
+    display: inline;
+  }
+
+  .wave-container::after {
+    background-size: 100% 100%;
+  }
+
+  @include keyframes-animation(move-boat) {
+    0% {
+      transform: translateX(0);    
+    } 100%{
+      transform: translateX(#{$horizontal-distance});    
+    }
+  } 
+
+  .wave-container .boat {
+    height: 100%;
+  }
+
+  .wave-container .boat::after {
+    right: -#{$boat-width};
+    width: #{$boat-width};
+    z-index: 1;
+
+    @include prefix-property(animation, move-boat #{$boat-horizontal-duration} linear infinite);
+  }
+}
+
+
+@media only screen and (min-width: 992px) {
+  @for $i from $homes-tablet to $max-homes {
+    .houses-container>img:nth-child(#{$i}) {
+      display: inline;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1500px) {
+  .sky-container .main-content .text-container {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width: 2300px) {
+  .sky-container .main-content .text-container {
+    font-size: 2.5em;
+  }
+}
