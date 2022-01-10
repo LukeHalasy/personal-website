@@ -21,6 +21,7 @@
     "gulp": "^4.0.2",
     "gulp-cssnano": "^2.1.3",
     "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-sass": "^5.0.0",
     "gulp-svgmin": "^4.1.0",
     "gulp-useref": "^5.0.0",
