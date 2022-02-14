@@ -1,4 +1,4 @@
-# PersonalWebsite
+# personal-website
 
 My personal site :)
 
