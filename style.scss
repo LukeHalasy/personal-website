@@ -1,0 +1,166 @@
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$bg-color: #0C121F;
+$circle-duration: 3.5s;
+$lightup-duration: 3.4s;
+$orbit-radius: 0.8em;
+$dot-radius: 30px;
+$dot-colors: (
+  light-purple: #8191D1,
+  dull-red: #8B3838,
+  hunter-green: #3D8C94,
+  light-pink: #C476BE,
+  carolina-blue: #95C8EF
+);
+
+$container-bg-color: #070B17;
+$container-border-color: #5096D3;
+$container-width: 75%;
+$container-height: 85%;
+
+html, body {
+  background: #{$bg-color};
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+	user-select: none;
+}
+
+.content {
+  position: absolute;
+  width: $container-width;
+  height: $container-height;
+  left: math.div(calc(100% - $container-width), 2);
+  top: math.div(calc(100% - $container-height), 2);
+
+  background-color: #{$container-bg-color};
+  border: 20px solid #{$container-border-color};
+  box-shadow: 0 1px 50px #000;
+
+  color: #FFF;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 5rem;
+  z-index: 2;
+}
+
+a {
+  font-size: 0.5em;
+  font-style: italic;
+  cursor: pointer;
+  transition-duration: 0.15s;
+  transform: none;
+  display: inline-block;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #FFF;
+}
+
+a:hover {
+  color: #AAA;
+  transform: scaleX( 1.1 );
+}
+
+.selfie {
+  width: 150px;
+  height: 150px;
+  border: 3px solid #FFF;
+  background-color: #577DF5;
+  border-radius: 50%;
+  margin-left: 50%;
+  transform: translateX( -50% );
+}
+
+img {
+  margin-top: 7px;
+  margin-left: -5px;
+  width: 120px;
+  height: 120px;
+  transform: scale( 1.55, 1.55 );
+}
+
+
+@mixin keyframes-animation($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+};
+
+@mixin prefix-property($name, $value) {
+  -webkit-#{$name}: $value;
+          #{$name}: $value;
+};
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  height: $dot-radius;
+  width: $dot-radius;
+  padding: 0px;
+  margin: 0px;
+  z-index: 1;
+}
+
+@include keyframes-animation(circular-animation) {
+  from {
+    @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
+  }
+  to {
+    @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
+  }
+}
+
+@include keyframes-animation(circular-animation-reverse) {
+  from {
+    @include prefix-property(transform, rotate(360deg) translateX(#{$orbit-radius}));
+  }
+  to {
+    @include prefix-property(transform, rotate(0deg) translateX(#{$orbit-radius}));
+  }
+}
+
+@include keyframes-animation(animation-lightup) {
+  from {
+    opacity: 0;    
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@each $color-name, $color-value in $dot-colors {
+  .dot.theme-#{$color-name} {
+    background: #{$color-value};
+    @include prefix-property(animation, circular-animation #{$circle-duration} normal infinite);
+  }
+
+  
+  .dot.theme-#{$color-name}::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 0px;
+    opacity: 0;
+    background-color: transparent;
+
+    box-shadow: 0 1px 50px 10px #{$color-value};
+    @include prefix-property(animation, animation-lightup #{$lightup-duration} alternate ease-in infinite);
+  }
+  
+
+  .dot.theme-#{$color-name}.reverse {
+    @include prefix-property(animation, circular-animation-reverse #{$circle-duration} normal infinite);
+  }
+}

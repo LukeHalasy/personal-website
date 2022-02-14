@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="style.css">
+
+<div class="content">
+	<br>
+	Luke Halasy
+	<br>
+	<br>
+	<a>Resume</a><br>
+	<a href="https://linkedin.com" target="_blank">LinkedIn</a><br>
+	<a>Projects</a>
+  
+</div>
+
+<script>
+  window.onload = function() {
+    const numberOfDots = 200;
+    
+    // derived from the scss file
+    const color_names = ["light-purple", "dull-red", "hunter-green", "light-pink", "carolina-blue"]
+
+    var fragment = document.createDocumentFragment();
+    const maxDelay = 2.5;
+    const precision = 0.01;
+    for (var i = 0; i < numberOfDots; i++) {
+      var dot = document.createElement("div");
+      var color = color_names[i % color_names.length];
+      var x = Math.floor(Math.random() * 100);
+      var y = Math.floor(Math.random() * 100);
+      var reverse = Math.random() < 0.5;
+
+      dot.setAttribute("class", `dot theme-${color} ${reverse ? "reverse" : ""}`);
+      dot.style.animationDelay = Math.floor(Math.random() * maxDelay * (1 / precision)) / (1 / precision) + "s";
+      dot.style.left = x + "%";
+      dot.style.top = y + "%";
+
+      console.log(dot);
+      fragment.appendChild(dot);
+    }
+
+    document.body.appendChild(fragment);
+  }
+ 
+</script>
