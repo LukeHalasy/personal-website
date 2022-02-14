@@ -26,5 +26,9 @@
     "gulp-svgmin": "^4.1.0",
     "gulp-useref": "^5.0.0",
     "sass": "^1.45.1"
+  },
+  "dependencies": {
+    "caniuse-db": "^1.0.30001312",
+    "caniuse-lite": "^1.0.30001312"
   }
 }
