@@ -185,6 +185,7 @@ $precision: 0.01;
 .wave-container {
   position: absolute;
   width: 100%;
+  min-width: 300px;
   height: 30%;
   bottom: 0px;
   background: #{$bg-color};
@@ -207,9 +208,9 @@ $precision: 0.01;
 
 @include keyframes-animation(move-wave) {
   0% {
-    transform: scaleX(1) translateY(0%);    
+    background-position: 0px 0px;
   } 100% {
-    transform: scaleX(1.05) translateY(9%);
+    background-position: 30rem 0px;
   }
 }
 
@@ -237,7 +238,7 @@ $horizontal-distance: (($boat-width * -1) * (100% / $boat-width)) + (-1 * (100% 
   }
 }
 
-$wave-duration: 5s;
+$wave-duration: 18.3s;
 $boat-vertical-duration: $wave-duration * 4;
 $boat-horizontal-duration: 15s;
 
@@ -245,6 +246,8 @@ $boat-horizontal-duration: 15s;
   content: '';
   position: absolute;
   width: 100%;
+  border: 1px solid red;
+  min-height: 2rem;
   height: 83%;
   bottom: 0;
   left: 0;
@@ -252,9 +255,9 @@ $boat-horizontal-duration: 15s;
   background: black;
   background-image: url("../images/wave.svg");
   background-position: top;
-  background-size: 120% 100%; 
+  background-size: 30rem 5rem; 
   background-repeat: repeat-x;
-  @include prefix-property(animation, move-wave #{$wave-duration} alternate cubic-bezier(.25,.56,.73,.41) infinite);
+  @include prefix-property(animation, move-wave #{$wave-duration} reverse linear infinite);
 }
 
 .wave-container .boat {
@@ -278,7 +281,7 @@ $boat-horizontal-duration: 15s;
   background-image: url("../images/boat.svg");
   background-position: top;
   background-size: 100% 100%; 
-  @include prefix-property(animation, move-boat #{$boat-horizontal-duration} linear infinite);
+  @include prefix-property(animation, move-boat #{$boat-horizontal-duration} ease-in-out infinite);
 }
 
 // 480px < size < 767px
@@ -339,10 +342,6 @@ $boat-horizontal-duration: 30s;
 
   .sky-container .main-content .text-container .link-container span .link-sep-non-mobile {
     display: inline;
-  }
-
-  .wave-container::after {
-    background-size: 100% 100%;
   }
 
   @include keyframes-animation(move-boat) {
