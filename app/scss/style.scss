@@ -238,7 +238,7 @@ $horizontal-distance: (($boat-width * -1) * (100% / $boat-width)) + (-1 * (100% 
   }
 }
 
-$wave-duration: 18.3s;
+$wave-duration: 20.3s;
 $boat-vertical-duration: $wave-duration * 4;
 $boat-horizontal-duration: 15s;
 
@@ -257,7 +257,7 @@ $boat-horizontal-duration: 15s;
   background-position: top;
   background-size: 30rem 5rem; 
   background-repeat: repeat-x;
-  @include prefix-property(animation, move-wave #{$wave-duration} reverse linear infinite);
+  @include prefix-property(animation, move-wave #{$wave-duration} normal linear infinite);
 }
 
 .wave-container .boat {

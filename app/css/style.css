@@ -131,46 +131,44 @@ html, body, .vsc-initialized {
 
 .houses-container > img:nth-child(1) {
   display: inline;
-  height: 45%;
-  transform: scaleX(-1);
+  height: 48%;
 }
 
 .houses-container > img:nth-child(2) {
   display: inline;
-  height: 39%;
+  height: 48%;
 }
 
 .houses-container > img:nth-child(3) {
   display: inline;
-  height: 34%;
+  height: 44%;
 }
 
 .houses-container > img:nth-child(4) {
   display: inline;
-  height: 39%;
+  height: 36%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(5) {
   display: inline;
-  height: 37%;
+  height: 38%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(6) {
   display: inline;
-  height: 39%;
-  transform: scaleX(-1);
+  height: 45%;
 }
 
 .houses-container > img:nth-child(7) {
   display: inline;
-  height: 40%;
-  transform: scaleX(-1);
+  height: 48%;
 }
 
 .houses-container > img:nth-child(8) {
   display: inline;
-  height: 34%;
+  height: 43%;
 }
 
 .houses-container > img:nth-child(9) {
@@ -180,61 +178,63 @@ html, body, .vsc-initialized {
 
 .houses-container > img:nth-child(10) {
   display: inline;
-  height: 48%;
+  height: 41%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(11) {
   display: inline;
-  height: 37%;
-  transform: scaleX(-1);
+  height: 39%;
 }
 
 .houses-container > img:nth-child(12) {
   display: inline;
-  height: 34%;
+  height: 47%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(13) {
   display: inline;
   height: 40%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(14) {
   display: inline;
-  height: 40%;
+  height: 41%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(15) {
   display: inline;
-  height: 47%;
+  height: 42%;
 }
 
 .houses-container > img:nth-child(16) {
   display: inline;
-  height: 41%;
+  height: 42%;
 }
 
 .houses-container > img:nth-child(17) {
   display: inline;
-  height: 41%;
-  transform: scaleX(-1);
+  height: 39%;
 }
 
 .houses-container > img:nth-child(18) {
   display: inline;
-  height: 48%;
+  height: 35%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(19) {
   display: inline;
-  height: 45%;
+  height: 39%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(20) {
   display: inline;
-  height: 47%;
+  height: 36%;
 }
 
 .houses-container > img:nth-child(21) {
@@ -244,81 +244,79 @@ html, body, .vsc-initialized {
 
 .houses-container > img:nth-child(22) {
   display: inline;
-  height: 38%;
+  height: 36%;
 }
 
 .houses-container > img:nth-child(23) {
   display: inline;
-  height: 35%;
+  height: 44%;
 }
 
 .houses-container > img:nth-child(24) {
   display: inline;
-  height: 34%;
+  height: 45%;
 }
 
 .houses-container > img:nth-child(25) {
   display: inline;
-  height: 36%;
-  transform: scaleX(-1);
+  height: 45%;
 }
 
 .houses-container > img:nth-child(26) {
   display: inline;
   height: 44%;
-  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(27) {
   display: inline;
-  height: 42%;
+  height: 45%;
+  transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(28) {
   display: inline;
-  height: 46%;
+  height: 43%;
 }
 
 .houses-container > img:nth-child(29) {
   display: inline;
-  height: 48%;
+  height: 47%;
 }
 
 .houses-container > img:nth-child(30) {
   display: inline;
-  height: 47%;
-  transform: scaleX(-1);
+  height: 48%;
 }
 
 .houses-container > img:nth-child(31) {
   display: inline;
-  height: 35%;
+  height: 40%;
 }
 
 .houses-container > img:nth-child(32) {
   display: inline;
-  height: 42%;
+  height: 43%;
   transform: scaleX(-1);
 }
 
 .houses-container > img:nth-child(33) {
   display: inline;
-  height: 40%;
+  height: 34%;
 }
 
 .houses-container > img:nth-child(34) {
   display: inline;
-  height: 39%;
+  height: 38%;
 }
 
 .houses-container > img:nth-child(35) {
   display: inline;
-  height: 38%;
+  height: 43%;
 }
 
 .houses-container > img:nth-child(36) {
   display: inline;
-  height: 43%;
+  height: 39%;
 }
 
 .houses-container > img:nth-child(1) {
@@ -447,8 +445,8 @@ html, body, .vsc-initialized {
   background-position: top;
   background-size: 30rem 5rem;
   background-repeat: repeat-x;
-  -webkit-animation: move-wave 18.3s reverse linear infinite;
-  animation: move-wave 18.3s reverse linear infinite;
+  -webkit-animation: move-wave 20.3s normal linear infinite;
+  animation: move-wave 20.3s normal linear infinite;
 }
 
 .wave-container .boat {
@@ -456,8 +454,8 @@ html, body, .vsc-initialized {
   height: 82%;
   width: 100%;
   z-index: 1;
-  -webkit-animation: move-boat-vertically 73.2s cubic-bezier(0.29, 0.06, 0.7, 0.93) infinite;
-  animation: move-boat-vertically 73.2s cubic-bezier(0.29, 0.06, 0.7, 0.93) infinite;
+  -webkit-animation: move-boat-vertically 81.2s cubic-bezier(0.29, 0.06, 0.7, 0.93) infinite;
+  animation: move-boat-vertically 81.2s cubic-bezier(0.29, 0.06, 0.7, 0.93) infinite;
 }
 
 .wave-container .boat::after {
