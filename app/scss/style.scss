@@ -253,11 +253,10 @@ $boat-horizontal-duration: 15s;
   left: 0;
   border: 0px;
   background: black;
-  background-image: url("../images/wave.svg");
+  background-image: url("../images/wave-animated.svg");
   background-position: top;
   background-size: 30rem 5rem; 
   background-repeat: repeat-x;
-  @include prefix-property(animation, move-wave #{$wave-duration} normal linear infinite);
 }
 
 .wave-container .boat {

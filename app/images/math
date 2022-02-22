@@ -1,0 +1,22 @@
+width overall: 391.77
+
+half: 195.885
+
+x: 195.885
+
+<style type="text/css">
+<![CDATA[
+.wave {
+      animation: move 10s linear infinite
+    }
+
+    @keyframes move {
+      from {
+        transform: translateX(0)
+      } to {
+        transform: translateX(100%)
+      }
+    }
+
+    ]]>
+</style>
