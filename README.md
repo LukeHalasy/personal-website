@@ -1,5 +1,18 @@
-# personal-website
+# My Personal Site
+[lukehalasy.com](https://lukehalasy.com)
 
-My personal site :)
+## Technology Stack (frontend)
+This project was built using the following technologies
 
-[lukehalasy.com](https://lukehalasy.com/)
+* [Node](https://github.com/nodejs/node)
+* [Sass](https://github.com/sass/sass)
+
+## Quickstart Guide
+Clone the repo
+
+### To run locally
+
+```bash
+npm install
+gulp watch
+```
