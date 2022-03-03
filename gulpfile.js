@@ -8,6 +8,7 @@ const gulpIf = require('gulp-if');
 const useref = require('gulp-useref');
 const svgmin = require('gulp-svgmin');
 const imagemin = require('gulp-imagemin');
+const rename = require('gulp-rename');
 
 const browserSync = require('browser-sync').create();
 
@@ -27,6 +28,13 @@ function watch() {
 }
 
 function style() {
+    gulp.src("./node_modules/normalize.css/normalize.css")
+      .pipe(rename(function (path) {
+        path.basename = "_normalize";
+        path.extname = ".scss";
+      }))
+      .pipe(gulp.dest("app/scss/"));
+
     return gulp.src('app/scss/*.scss')
     .pipe(sass().on('error',sass.logError))
     .pipe(gulp.dest('app/css'))

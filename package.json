@@ -26,5 +26,9 @@
     "gulp-svgmin": "^4.1.0",
     "gulp-useref": "^5.0.0",
     "sass": "^1.45.1"
+  },
+  "dependencies": {
+    "gulp-rename": "^2.0.0",
+    "normalize.css": "^8.0.1"
   }
 }
