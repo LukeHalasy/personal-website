@@ -208,9 +208,9 @@ $precision: 0.01;
 
 @include keyframes-animation(move-wave) {
   0% {
-    background-position: 0px 0px;
+    transform: translateY(0%);
   } 100% {
-    background-position: 30rem 0px;
+    transform: translateY(12%);
   }
 }
 
@@ -253,10 +253,11 @@ $boat-horizontal-duration: 15s;
   left: 0;
   border: 0px;
   background: black;
-  background-image: url("../images/wave-animated.svg");
+  background-image: url("../images/wave.svg");
   background-position: top;
   background-size: 30rem 5rem; 
   background-repeat: repeat-x;
+  @include prefix-property(animation, move-wave 4s ease-out alternate infinite);
 }
 
 .wave-container .boat {
